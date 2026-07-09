@@ -1,0 +1,68 @@
+{
+  "style": "Modern Metro",
+  "style_note": "This is Tile Africa's own name for what we've been calling 'Urban' - neutral greys, monochromatic, industrial-practical.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/modern-metro/bathroom",
+  "last_updated": "2026-07-09",
+  "known_gaps": [
+    "Confirmed: no built-in/inset bath exists anywhere in Tile Africa's Modern Metro collection - freestanding only.",
+    "Wall tile: Modern Metro's own collection has no wall tile at all. One matching grey wall tile found via general site search used as premium. Budget and mid wall tile options still need sourcing."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "Nuvo Maravilla Floor Standing Vanity, Cotton, 800mm", "price": 6999.99, "unit": "each" },
+      "mid": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 1000mm", "price": 7999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Musgo, 1000mm", "price": 8499.99, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Round, Glossy White", "price": 2299.99, "unit": "each" },
+      "mid": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Round, Glossy White", "price": 2299.99, "unit": "each" },
+      "premium": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Round, Glossy White", "price": 2299.99, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm (special price)", "price": 8999.99, "unit": "each" },
+      "mid": { "product": "Nuvo Virtuo Oval Freestanding Acrylic Bath, White, 1700x750x580mm", "price": 12499.99, "unit": "each" },
+      "premium": { "product": "Nuvo Voluta Freestanding Acrylic Bath, White, 1700x590x800mm", "price": 16999.99, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "Evox Albion Cold Start Basin Mixer, Chrome", "price": 799.99, "unit": "each" },
+      "mid": { "product": "Evox Albion Cold Start High Basin Mixer, Chrome", "price": 1349.99, "unit": "each" },
+      "premium": { "product": "Evox Albion Cold Start High Basin Mixer, Graphite", "price": 1649.99, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "Evox Albion Bath Mixer, Chrome", "price": 2049.99, "unit": "each" },
+      "mid": { "product": "Evox Albion Bath Mixer, Graphite", "price": 2599.99, "unit": "each" },
+      "premium": { "product": "Hansgrohe Logis Square Bath Mixer, Chrome", "price": 2899.99, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "Evox Albion Concealed Mixer, Chrome", "price": 799.99, "unit": "each" },
+      "mid": { "product": "Evox Albion Concealed Mixer, Graphite", "price": 1099.99, "unit": "each" },
+      "premium": { "product": "Hansgrohe Logis Square Shower Concealed Mixer, Chrome", "price": 2599.99, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "Evox Shower Head Stainless Steel Round 200mm, Gold", "price": 1099.99, "unit": "each" },
+      "mid": { "product": "Evox Shower Head Stainless Steel Square 300mm, Gold", "price": 1600.00, "unit": "each" },
+      "premium": { "product": "Hansgrohe Vernis Square 1 Jet Shower Head, Chrome, 230mm", "price": 2199.98, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "Arena Beige Ceramic Floor, 330x330mm", "price": 79.99, "unit": "per m2" },
+      "mid": { "product": "Osaka Light Grey Hard Body Floor, 600x600mm", "price": 179.99, "unit": "per m2" },
+      "premium": { "product": "Miami Light Grey Hard Body Floor, 600x600mm", "price": 199.99, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "Matrix Grey Matt Ceramic Wall Tile, 300x600mm", "price": 239.99, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "Nuvo Belle Mirror Shelf, Quarzo", "price": 1299.98, "unit": "each" },
+      "mid": { "product": "Nuvo Belle Mirror Shelf, Musgo", "price": 1299.98, "unit": "each" },
+      "premium": { "product": "Nuvo Belle Mirror Shelf, B Soul", "price": 1299.98, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "Evox Cadenza Double Towel Rail 600mm, Chrome", "price": 389.99, "unit": "each" },
+      "mid": { "product": "Evox Cadenza Double Towel Rail 600mm, Matt Black", "price": 409.99, "unit": "each" },
+      "premium": { "product": "Evox Cadenza Double Towel Rail 600mm, Graphite", "price": 469.99, "unit": "each" }
+    }
+  }
+}
