@@ -3,19 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PGS Bathroom Tool - API Test</title>
+<title>PGS Bathroom Tool</title>
 <style>
   body{font-family:-apple-system,Arial,sans-serif;background:#f4f4f2;color:#1a1a1a;max-width:640px;margin:40px auto;padding:0 20px;}
   h1{font-size:20px;}
-  select,button{font-size:14px;padding:8px 12px;margin-right:8px;border-radius:6px;border:1px solid #ccc;}
+  select,button,input[type=file]{font-size:14px;padding:8px 12px;margin-right:8px;border-radius:6px;border:1px solid #ccc;}
   button{background:#8bc53f;border:none;color:#17280a;font-weight:700;cursor:pointer;}
-  pre{background:#111312;color:#e4e7ec;padding:16px;border-radius:8px;overflow-x:auto;font-size:12px;}
+  button:disabled{background:#ccc;color:#666;cursor:default;}
+  pre{background:#111312;color:#e4e7ec;padding:16px;border-radius:8px;overflow-x:auto;font-size:12px;white-space:pre-wrap;}
   .row{margin-bottom:16px;}
+  img.result{max-width:100%;border-radius:8px;margin-bottom:16px;display:block;}
 </style>
 </head>
 <body>
-<h1>PGS bathroom tool - live API test</h1>
-<p>This page proves the deployment works: it calls the live /api/quote function, which computes a real quote from the Modern Metro catalog.</p>
+<h1>PGS bathroom tool</h1>
+<p>Upload a bathroom photo, pick a tier and bath type, and get a redesigned photo plus a real itemized quote from the Modern Metro catalog.</p>
+
+<div class="row">
+  <input type="file" id="photo" accept="image/*">
+</div>
 
 <div class="row">
   <label>Tier: </label>
@@ -31,23 +37,77 @@
     <option value="built-in">Built-in</option>
   </select>
 
-  <button onclick="getQuote()">Get quote</button>
+  <button id="goBtn" onclick="redesign()">Redesign my bathroom</button>
 </div>
 
-<pre id="result">Click "Get quote" to call the live API...</pre>
+<div id="status"></div>
+<img id="resultImg" class="result" style="display:none;">
+<pre id="result"></pre>
 
 <script>
-async function getQuote() {
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = reader.result;
+      const base64 = dataUrl.split(',')[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function redesign() {
+  const fileInput = document.getElementById('photo');
+  const statusEl = document.getElementById('status');
+  const resultImg = document.getElementById('resultImg');
+  const resultEl = document.getElementById('result');
+  const goBtn = document.getElementById('goBtn');
+
+  if (!fileInput.files.length) {
+    statusEl.textContent = 'Choose a photo first.';
+    return;
+  }
+
+  const file = fileInput.files[0];
   const tier = document.getElementById('tier').value;
   const bathType = document.getElementById('bathType').value;
-  const resultEl = document.getElementById('result');
-  resultEl.textContent = 'Loading...';
+
+  goBtn.disabled = true;
+  statusEl.textContent = 'Uploading and redesigning - this calls the real OpenAI API, takes 10-30 seconds...';
+  resultImg.style.display = 'none';
+  resultEl.textContent = '';
+
   try {
-    const res = await fetch(`/api/quote?tier=${tier}&bathType=${bathType}`);
+    const imageBase64 = await fileToBase64(file);
+
+    const res = await fetch('/api/redesign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        tier, bathType,
+        imageBase64,
+        imageMimeType: file.type,
+      }),
+    });
+
     const data = await res.json();
-    resultEl.textContent = JSON.stringify(data, null, 2);
+
+    if (!res.ok) {
+      statusEl.textContent = 'Error: ' + (data.error || 'unknown error');
+      resultEl.textContent = JSON.stringify(data, null, 2);
+      return;
+    }
+
+    statusEl.textContent = 'Done.';
+    resultImg.src = 'data:image/png;base64,' + data.redesigned_image_base64;
+    resultImg.style.display = 'block';
+    resultEl.textContent = JSON.stringify(data.quote, null, 2);
   } catch (err) {
-    resultEl.textContent = 'Error: ' + err.message;
+    statusEl.textContent = 'Error: ' + err.message;
+  } finally {
+    goBtn.disabled = false;
   }
 }
 </script>
