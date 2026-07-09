@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGS Bathroom Tool - API Test</title>
+<style>
+  body{font-family:-apple-system,Arial,sans-serif;background:#f4f4f2;color:#1a1a1a;max-width:640px;margin:40px auto;padding:0 20px;}
+  h1{font-size:20px;}
+  select,button{font-size:14px;padding:8px 12px;margin-right:8px;border-radius:6px;border:1px solid #ccc;}
+  button{background:#8bc53f;border:none;color:#17280a;font-weight:700;cursor:pointer;}
+  pre{background:#111312;color:#e4e7ec;padding:16px;border-radius:8px;overflow-x:auto;font-size:12px;}
+  .row{margin-bottom:16px;}
+</style>
+</head>
+<body>
+<h1>PGS bathroom tool - live API test</h1>
+<p>This page proves the deployment works: it calls the live /api/quote function, which computes a real quote from the Modern Metro catalog.</p>
+
+<div class="row">
+  <label>Tier: </label>
+  <select id="tier">
+    <option value="budget">Budget</option>
+    <option value="mid">Mid</option>
+    <option value="premium">Premium</option>
+  </select>
+
+  <label>Bath type: </label>
+  <select id="bathType">
+    <option value="freestanding">Freestanding</option>
+    <option value="built-in">Built-in</option>
+  </select>
+
+  <button onclick="getQuote()">Get quote</button>
+</div>
+
+<pre id="result">Click "Get quote" to call the live API...</pre>
+
+<script>
+async function getQuote() {
+  const tier = document.getElementById('tier').value;
+  const bathType = document.getElementById('bathType').value;
+  const resultEl = document.getElementById('result');
+  resultEl.textContent = 'Loading...';
+  try {
+    const res = await fetch(`/api/quote?tier=${tier}&bathType=${bathType}`);
+    const data = await res.json();
+    resultEl.textContent = JSON.stringify(data, null, 2);
+  } catch (err) {
+    resultEl.textContent = 'Error: ' + err.message;
+  }
+}
+</script>
+</body>
+</html>
