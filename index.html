@@ -3,113 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PGS Bathroom Tool</title>
+<title>PGS - Professional Green Solutions | East London</title>
 <style>
-  body{font-family:-apple-system,Arial,sans-serif;background:#f4f4f2;color:#1a1a1a;max-width:640px;margin:40px auto;padding:0 20px;}
-  h1{font-size:20px;}
-  select,button,input[type=file]{font-size:14px;padding:8px 12px;margin-right:8px;border-radius:6px;border:1px solid #ccc;}
-  button{background:#8bc53f;border:none;color:#17280a;font-weight:700;cursor:pointer;}
-  button:disabled{background:#ccc;color:#666;cursor:default;}
-  pre{background:#111312;color:#e4e7ec;padding:16px;border-radius:8px;overflow-x:auto;font-size:12px;white-space:pre-wrap;}
-  .row{margin-bottom:16px;}
-  img.result{max-width:100%;border-radius:8px;margin-bottom:16px;display:block;}
+  :root{
+    --bg-dark:#111312;
+    --green:#8bc53f;
+    --green-dark:#5f8a26;
+    --white:#ffffff;
+    --gray-text:#b9bdb8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#f4f4f2;color:#1a1a1a;}
+  a{text-decoration:none;}
+  .top-bar{background:var(--bg-dark);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;flex-wrap:wrap;gap:10px;}
+  .logo-mark{display:flex;align-items:center;gap:10px;}
+  .ring{position:relative;width:46px;height:46px;}
+  .ring svg{width:100%;height:100%;}
+  .logo-text{font-weight:900;font-size:20px;letter-spacing:1px;color:var(--white);}
+  .logo-text .g{color:var(--green);}
+  .top-cta{background:var(--green);color:#0f1a04;border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;}
+  .hero{position:relative;background:var(--bg-dark);color:var(--white);padding:70px 24px 90px;overflow:hidden;}
+  .hero-inner{max-width:640px;position:relative;z-index:2;}
+  .hero-tag{display:flex;align-items:center;gap:8px;color:var(--green);font-size:13px;letter-spacing:2px;font-weight:700;margin-bottom:18px;text-transform:uppercase;}
+  .hero h1{font-size:44px;font-weight:900;line-height:1.05;text-transform:uppercase;margin-bottom:8px;}
+  .hero h1 .accent{color:var(--green);}
+  .hero p{color:var(--gray-text);font-size:16px;max-width:420px;margin:18px 0 28px;line-height:1.6;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-primary{background:var(--green);color:#0f1a04;border:none;padding:14px 22px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;display:inline-block;}
+  .btn-outline{background:transparent;color:var(--white);border:1.5px solid #4a4d49;padding:14px 22px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;display:inline-block;}
+  .services{background:var(--bg-dark);padding:0 24px 60px;}
+  .services-label{max-width:640px;margin:0 auto 14px;color:var(--gray-text);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+  .services-grid{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .service-card{background:#1a1c1a;border:1px solid #2c2e2a;border-radius:14px;padding:18px;position:relative;}
+  .service-card.featured{border:2px solid var(--green);}
+  .service-card svg{width:24px;height:24px;fill:none;stroke:var(--green);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:12px;}
+  .service-card span{color:var(--white);font-size:14px;font-weight:700;line-height:1.35;display:block;}
+  .badge-tool{position:absolute;top:-11px;left:16px;background:var(--green);color:#0f1a04;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;}
+  @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+  .gallery{padding:50px 24px;background:#f4f4f2;}
+  .gallery h2{text-align:center;font-size:22px;font-weight:800;margin-bottom:6px;}
+  .gallery p.sub{text-align:center;color:#6b6f68;font-size:14px;margin-bottom:28px;}
+  .gallery-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .photo-real{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;}
+  .photo-real img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-real span{position:absolute;bottom:0;left:0;right:0;background:rgba(17,19,18,0.72);color:#fff;font-size:12px;font-weight:600;padding:8px 10px;}
+  .quote-tool{background:#eef6df;padding:50px 24px;}
+  .quote-card{max-width:520px;margin:0 auto;background:var(--white);border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.06);text-align:center;}
+  .quote-card h2{font-size:20px;font-weight:800;margin-bottom:6px;}
+  .quote-card p{color:#63665f;font-size:14px;margin-bottom:20px;line-height:1.5;}
+  footer{background:var(--bg-dark);color:var(--white);padding:30px 24px;display:flex;justify-content:center;}
+  .contact-pill{border:2px solid var(--green);border-radius:40px;padding:16px 30px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;}
+  .contact-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--white);}
+  .contact-item .name{color:var(--white);}
+  .contact-item .name .last{color:var(--green);}
 </style>
 </head>
 <body>
-<h1>PGS bathroom tool</h1>
-<p>Upload a bathroom photo, pick a tier and bath type, and get a redesigned photo plus a real itemized quote from the Modern Metro catalog.</p>
 
-<div class="row">
-  <input type="file" id="photo" accept="image/*">
+<div class="top-bar">
+  <a href="/" class="logo-mark">
+    <div class="ring">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#8bc53f" stroke-width="8" stroke-dasharray="230 40" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+        <path d="M62 30c8 6 8 18 2 26-3-9-8-15-14-18 6 1 10 0 12-8z" fill="#8bc53f"/>
+      </svg>
+    </div>
+    <div class="logo-text">PG<span class="g">S</span></div>
+  </a>
+  <button class="top-cta">Call 072 762 7657</button>
 </div>
 
-<div class="row">
-  <label>Tier: </label>
-  <select id="tier">
-    <option value="budget">Budget</option>
-    <option value="mid">Mid</option>
-    <option value="premium">Premium</option>
-  </select>
-
-  <label>Bath type: </label>
-  <select id="bathType">
-    <option value="freestanding">Freestanding</option>
-    <option value="built-in">Built-in</option>
-  </select>
-
-  <button id="goBtn" onclick="redesign()">Redesign my bathroom</button>
-</div>
-
-<div id="status"></div>
-<img id="resultImg" class="result" style="display:none;">
-<pre id="result"></pre>
-
-<script>
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataUrl = reader.result;
-      const base64 = dataUrl.split(',')[1];
-      resolve(base64);
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-async function redesign() {
-  const fileInput = document.getElementById('photo');
-  const statusEl = document.getElementById('status');
-  const resultImg = document.getElementById('resultImg');
-  const resultEl = document.getElementById('result');
-  const goBtn = document.getElementById('goBtn');
-
-  if (!fileInput.files.length) {
-    statusEl.textContent = 'Choose a photo first.';
-    return;
-  }
-
-  const file = fileInput.files[0];
-  const tier = document.getElementById('tier').value;
-  const bathType = document.getElementById('bathType').value;
-
-  goBtn.disabled = true;
-  statusEl.textContent = 'Uploading and redesigning - this calls the real OpenAI API, takes 10-30 seconds...';
-  resultImg.style.display = 'none';
-  resultEl.textContent = '';
-
-  try {
-    const imageBase64 = await fileToBase64(file);
-
-    const res = await fetch('/api/redesign', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        tier, bathType,
-        imageBase64,
-        imageMimeType: file.type,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      statusEl.textContent = 'Error: ' + (data.error || 'unknown error');
-      resultEl.textContent = JSON.stringify(data, null, 2);
-      return;
-    }
-
-    statusEl.textContent = 'Done.';
-    resultImg.src = 'data:image/png;base64,' + data.redesigned_image_base64;
-    resultImg.style.display = 'block';
-    resultEl.textContent = JSON.stringify(data.quote, null, 2);
-  } catch (err) {
-    statusEl.textContent = 'Error: ' + err.message;
-  } finally {
-    goBtn.disabled = false;
-  }
-}
-</script>
-</body>
-</html>
+<section class="hero">
+  <div
