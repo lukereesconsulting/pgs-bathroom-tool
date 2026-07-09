@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design your bathroom - PGS</title>
+<title>PGS - Professional Green Solutions | East London</title>
 <style>
   :root{
     --bg-dark:#111312;
     --green:#8bc53f;
+    --green-dark:#5f8a26;
     --white:#ffffff;
     --gray-text:#b9bdb8;
   }
@@ -16,53 +17,45 @@
   a{text-decoration:none;}
   .top-bar{background:var(--bg-dark);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;flex-wrap:wrap;gap:10px;}
   .logo-mark{display:flex;align-items:center;gap:10px;}
-  .ring{position:relative;width:40px;height:40px;}
+  .ring{position:relative;width:46px;height:46px;}
   .ring svg{width:100%;height:100%;}
-  .logo-text{font-weight:900;font-size:18px;letter-spacing:1px;color:var(--white);}
+  .logo-text{font-weight:900;font-size:20px;letter-spacing:1px;color:var(--white);}
   .logo-text .g{color:var(--green);}
   .top-cta{background:var(--green);color:#0f1a04;border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;}
-
-  main{max-width:640px;margin:0 auto;padding:36px 20px 80px;}
-  h1{font-size:24px;margin-bottom:6px;}
-  .sub{color:#63665f;font-size:14px;margin-bottom:28px;line-height:1.5;}
-
-  .field-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#63665f;margin:22px 0 10px;}
-
-  .style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-  .style-opt{border:1.5px solid #d8dad4;border-radius:10px;padding:12px 8px;text-align:center;font-size:12px;font-weight:700;background:#fff;cursor:pointer;color:#333;}
-  .style-opt.active{border-color:var(--green);background:#eef6df;}
-  .style-opt.disabled{opacity:0.4;cursor:not-allowed;}
-  .style-opt .soon{display:block;font-weight:400;font-size:10px;color:#9a9d95;margin-top:2px;}
-
-  .pill-row{display:flex;gap:8px;flex-wrap:wrap;}
-  .pill{flex:1;min-width:100px;padding:12px 0;border-radius:8px;border:1.5px solid #d8dad4;background:#fff;font-weight:700;font-size:13px;cursor:pointer;color:#333;text-align:center;}
-  .pill.active{background:var(--green);border-color:var(--green);color:#0f1a04;}
-
-  .upload-box{border:2px dashed #c9ccc4;border-radius:12px;padding:24px;text-align:center;background:#fff;}
-  .upload-box input{margin-top:10px;}
-
-  .go-btn{width:100%;margin-top:28px;background:var(--green);color:#0f1a04;border:none;padding:16px;border-radius:8px;font-weight:800;font-size:15px;cursor:pointer;}
-  .go-btn:disabled{background:#ccc;color:#777;cursor:default;}
-
-  #status{margin-top:16px;font-size:13px;color:#63665f;}
-
-  .result{margin-top:28px;display:none;}
-  .result img{width:100%;border-radius:12px;display:block;margin-bottom:16px;}
-  .cost-card{background:#111312;color:#fff;border-radius:12px;padding:20px;margin-bottom:16px;}
-  .cost-card .label{font-size:12px;color:var(--gray-text);text-transform:uppercase;letter-spacing:0.5px;}
-  .cost-card .total{font-size:28px;font-weight:800;color:var(--green);margin:4px 0 2px;}
-  .cost-card .meta{font-size:12px;color:var(--gray-text);}
-
-  .items{background:#fff;border-radius:12px;padding:8px 20px;margin-bottom:16px;}
-  .item-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #eee;font-size:13px;}
-  .item-row:last-child{border-bottom:none;}
-  .item-row .cat{font-weight:700;color:#63665f;font-size:11px;text-transform:uppercase;display:block;}
-  .item-row .cost{font-weight:700;white-space:nowrap;}
-
-  .note-box{background:#fff8e6;border:1px solid #f0deab;border-radius:10px;padding:12px 16px;font-size:12px;color:#7a6420;margin-bottom:16px;}
-
-  .whatsapp-btn{display:block;width:100%;text-align:center;background:#25D366;color:#fff;padding:16px;border-radius:8px;font-weight:800;font-size:15px;}
-  .save-hint{text-align:center;font-size:12px;color:#63665f;margin-top:10px;}
+  .hero{position:relative;background:var(--bg-dark);color:var(--white);padding:70px 24px 90px;overflow:hidden;}
+  .hero-inner{max-width:640px;position:relative;z-index:2;}
+  .hero-tag{display:flex;align-items:center;gap:8px;color:var(--green);font-size:13px;letter-spacing:2px;font-weight:700;margin-bottom:18px;text-transform:uppercase;}
+  .hero h1{font-size:44px;font-weight:900;line-height:1.05;text-transform:uppercase;margin-bottom:8px;}
+  .hero h1 .accent{color:var(--green);}
+  .hero p{color:var(--gray-text);font-size:16px;max-width:420px;margin:18px 0 28px;line-height:1.6;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-primary{background:var(--green);color:#0f1a04;border:none;padding:14px 22px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;display:inline-block;}
+  .btn-outline{background:transparent;color:var(--white);border:1.5px solid #4a4d49;padding:14px 22px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;display:inline-block;}
+  .services{background:var(--bg-dark);padding:0 24px 60px;}
+  .services-label{max-width:640px;margin:0 auto 14px;color:var(--gray-text);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+  .services-grid{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .service-card{background:#1a1c1a;border:1px solid #2c2e2a;border-radius:14px;padding:18px;position:relative;}
+  .service-card.featured{border:2px solid var(--green);}
+  .service-card svg{width:24px;height:24px;fill:none;stroke:var(--green);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:12px;}
+  .service-card span{color:var(--white);font-size:14px;font-weight:700;line-height:1.35;display:block;}
+  .badge-tool{position:absolute;top:-11px;left:16px;background:var(--green);color:#0f1a04;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;}
+  @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+  .gallery{padding:50px 24px;background:#f4f4f2;}
+  .gallery h2{text-align:center;font-size:22px;font-weight:800;margin-bottom:6px;}
+  .gallery p.sub{text-align:center;color:#6b6f68;font-size:14px;margin-bottom:28px;}
+  .gallery-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .photo-real{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;}
+  .photo-real img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-real span{position:absolute;bottom:0;left:0;right:0;background:rgba(17,19,18,0.72);color:#fff;font-size:12px;font-weight:600;padding:8px 10px;}
+  .quote-tool{background:#eef6df;padding:50px 24px;}
+  .quote-card{max-width:520px;margin:0 auto;background:var(--white);border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.06);text-align:center;}
+  .quote-card h2{font-size:20px;font-weight:800;margin-bottom:6px;}
+  .quote-card p{color:#63665f;font-size:14px;margin-bottom:20px;line-height:1.5;}
+  footer{background:var(--bg-dark);color:var(--white);padding:30px 24px;display:flex;justify-content:center;}
+  .contact-pill{border:2px solid var(--green);border-radius:40px;padding:16px 30px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;}
+  .contact-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--white);}
+  .contact-item .name{color:var(--white);}
+  .contact-item .name .last{color:var(--green);}
 </style>
 </head>
 <body>
@@ -80,172 +73,58 @@
   <button class="top-cta">Call 072 762 7657</button>
 </div>
 
-<main>
-  <h1>Design your bathroom</h1>
-  <p class="sub">Upload a photo of your bathroom, pick a style and tier, and see a redesigned version plus a real itemized estimate. This is a free preview &mdash; for the exact quote, chat to Christian once you're happy with a look.</p>
-
-  <div class="field-label">Style</div>
-  <div class="style-grid">
-    <div class="style-opt active" id="style-modern-metro" onclick="selectStyle('modern-metro')">Modern Metro</div>
-    <div class="style-opt disabled">Coastal<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Classic<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Vintage<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Eclectic<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Natural<span class="soon">soon</span></div>
-  </div>
-
-  <div class="field-label">Tier</div>
-  <div class="pill-row" id="tierRow">
-    <div class="pill active" onclick="selectTier('budget', this)">Budget</div>
-    <div class="pill" onclick="selectTier('mid', this)">Mid</div>
-    <div class="pill" onclick="selectTier('premium', this)">Premium</div>
-  </div>
-
-  <div class="field-label">Bath type</div>
-  <div class="pill-row" id="bathRow">
-    <div class="pill active" onclick="selectBathType('freestanding', this)">Freestanding</div>
-    <div class="pill" onclick="selectBathType('built-in', this)">Built-in</div>
-  </div>
-
-  <div class="field-label">Your bathroom photo</div>
-  <div class="upload-box">
-    <div>Take a photo straight-on from the doorway if you can &mdash; it helps keep the redesign accurate.</div>
-    <input type="file" id="photo" accept="image/*">
-  </div>
-
-  <button class="go-btn" id="goBtn" onclick="redesign()">See my redesign</button>
-  <div id="status"></div>
-
-  <div class="result" id="resultBox">
-    <img id="resultImg" alt="Redesigned bathroom">
-
-    <div class="cost-card">
-      <div class="label" id="resultStyleTier"></div>
-      <div class="total" id="resultTotal"></div>
-      <div class="meta">Confirmed subtotal &mdash; materials only, excludes labour &amp; installation</div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Professional Green Solutions</div>
+    <h1>All general <span class="accent">home improvements</span></h1>
+    <p>Plumbing, renovations, bathroom makeovers, paving and more &mdash; done right the first time, for homes across East London.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Call Christian</button>
+      <button class="btn-outline">WhatsApp us</button>
     </div>
-
-    <div class="note-box" id="noteBox" style="display:none;"></div>
-
-    <div class="items" id="itemsBox"></div>
-
-    <a href="#" class="whatsapp-btn" id="whatsappBtn" target="_blank">Chat to Christian on WhatsApp</a>
-    <div class="save-hint">Save this image first (long-press or right-click &rarr; save), then attach it in WhatsApp so Christian can see it too.</div>
   </div>
-</main>
+</section>
 
-<script>
-let currentStyle = 'modern-metro';
-let currentTier = 'budget';
-let currentBathType = 'freestanding';
-let lastQuote = null;
+<section class="services">
+  <div class="services-label">What we do</div>
+  <div class="services-grid">
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M4 11L12 4l8 7"/><path d="M6 10v9h12v-9"/></svg><span>General home improvements</span></div>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Renovations &amp; additions</span></div>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 3c4 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 3-7 7-12z"/></svg><span>Plumbing installs &amp; maintenance</span></div>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M7 15a4 4 0 0 1 1-7.9 5 5 0 0 1 9.6 1.9A3.5 3.5 0 0 1 17 15H7z"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3"/></svg><span>Rainwater harvesting</span></div>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M12 3c1 3-2 4-2 7a3 3 0 0 0 6 0c0-1-1-2-1-2 2 1 3 3 3 5a6 6 0 0 1-12 0c0-4 3-6 6-10z"/></svg><span>Decking &amp; fire pits</span></div>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0H4z"/><path d="M12 12v7a2 2 0 0 1-4 0"/></svg><span>Waterproofing &amp; painting</span></div>
+    <a href="/bathroom-tool.html" class="service-card featured" style="cursor:pointer;"><span class="badge-tool">Design tool</span><svg viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2z"/><path d="M6 12V7a2 2 0 0 1 3-1.7"/><path d="M3 19h18"/></svg><span>Bathroom renovations</span></a>
+    <div class="service-card"><svg viewBox="0 0 24 24"><path d="M9 3L4 21"/><path d="M15 3l5 18"/><path d="M11 9h2M10.3 14h3.4"/></svg><span>Paving &amp; storm water</span></div>
+  </div>
+</section>
 
-function selectStyle(s){ currentStyle = s; }
+<section class="gallery">
+  <h2>Recent work</h2>
+  <p class="sub">Real jobs from around East London</p>
+  <div class="gallery-grid">
+    <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=17FIXqxq49g3_apcR7N7an5nSOxe4qYNF&amp;sz=w800" alt="Rainwater tank installation"><span>Rainwater tank installation</span></div>
+    <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=1BrOeymAL0GPgL3wplDrF2aAO_DPXZa0w&amp;sz=w800" alt="Deck and outdoor living"><span>Deck &amp; outdoor living</span></div>
+    <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=14SEAV93uxjPtG4PLoB3qUdxbWq_t0d6F&amp;sz=w800" alt="Stone fire pit at sunset"><span>Stone fire pit &amp; deck</span></div>
+  </div>
+</section>
 
-function selectTier(t, el){
-  currentTier = t;
-  document.querySelectorAll('#tierRow .pill').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-}
+<section class="quote-tool">
+  <div class="quote-card">
+    <h2>Design your dream bathroom</h2>
+    <p>Upload a photo, pick a style and tier, and see a redesigned version of your actual bathroom plus a real itemized estimate.</p>
+    <a href="/bathroom-tool.html" class="btn-primary">Start designing</a>
+  </div>
+</section>
 
-function selectBathType(b, el){
-  currentBathType = b;
-  document.querySelectorAll('#bathRow .pill').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-}
-
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(',')[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-function fmtR(n){
-  return 'R' + n.toLocaleString('en-ZA', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-}
-
-async function redesign() {
-  const fileInput = document.getElementById('photo');
-  const statusEl = document.getElementById('status');
-  const goBtn = document.getElementById('goBtn');
-  const resultBox = document.getElementById('resultBox');
-
-  if (!fileInput.files.length) {
-    statusEl.textContent = 'Choose a photo first.';
-    return;
-  }
-
-  goBtn.disabled = true;
-  statusEl.textContent = 'Redesigning your bathroom - this calls a real AI image model, takes 10-30 seconds...';
-  resultBox.style.display = 'none';
-
-  try {
-    const imageBase64 = await fileToBase64(fileInput.files[0]);
-
-    const res = await fetch('/api/redesign', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        tier: currentTier,
-        bathType: currentBathType,
-        imageBase64,
-        imageMimeType: fileInput.files[0].type,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      statusEl.textContent = 'Error: ' + (data.error || 'something went wrong');
-      return;
-    }
-
-    statusEl.textContent = '';
-    lastQuote = data.quote;
-    renderResult(data);
-    resultBox.style.display = 'block';
-    resultBox.scrollIntoView({ behavior: 'smooth' });
-  } catch (err) {
-    statusEl.textContent = 'Error: ' + err.message;
-  } finally {
-    goBtn.disabled = false;
-  }
-}
-
-function renderResult(data) {
-  const q = data.quote;
-  document.getElementById('resultImg').src = 'data:image/png;base64,' + data.redesigned_image_base64;
-  document.getElementById('resultStyleTier').textContent = q.style + ' - ' + q.tier + ' tier - ' + q.room_size;
-  document.getElementById('resultTotal').textContent = fmtR(q.confirmed_subtotal);
-
-  const noteBox = document.getElementById('noteBox');
-  if (q.notes_for_christian && q.notes_for_christian.length) {
-    noteBox.style.display = 'block';
-    noteBox.textContent = q.notes_for_christian.join(' ');
-  } else {
-    noteBox.style.display = 'none';
-  }
-
-  const itemsBox = document.getElementById('itemsBox');
-  itemsBox.innerHTML = '';
-  q.line_items.forEach(li => {
-    const row = document.createElement('div');
-    row.className = 'item-row';
-    row.innerHTML = `<div><span class="cat">${li.category}</span>${li.product}</div><div class="cost">${fmtR(li.cost)}</div>`;
-    itemsBox.appendChild(row);
-  });
-
-  const message =
-    `Hi Christian, I used the bathroom design tool on your site.\n\n` +
-    `Style: ${q.style}\nTier: ${q.tier}\nBath type: ${q.bath_type_used}\n` +
-    `Estimated total: ${fmtR(q.confirmed_subtotal)}\n\n` +
-    `I'm attaching my photo and the redesign here. Can we chat about a detailed quote?`;
-  document.getElementById('whatsappBtn').href = 'https://wa.me/27727627657?text=' + encodeURIComponent(message);
-}
-</script>
+<footer>
+  <div class="contact-pill">
+    <div class="contact-item">&#128205; East London, Eastern Cape</div>
+    <div class="contact-item name">Christian <span class="last">Keefe</span></div>
+    <div class="contact-item">&#128222; 072 762 7657</div>
+    <div class="contact-item">&#9993; ck@hotmail.co.za</div>
+  </div>
+</footer>
 
 </body>
 </html>
