@@ -202,3 +202,22 @@ assume any pending code block from chat history made it to GitHub.
 - Homepage gallery images are hosted on Google Drive — use
   `https://drive.google.com/thumbnail?id=FILE_ID&sz=w800` for hotlinking
   (`uc?export=view` does not reliably render, even on public files).
+
+## Tile Africa sourcing gotchas (for price refreshes / new catalogs)
+
+- tileafrica.co.za returns 403 to generic fetchers — send a browser
+  User-Agent header (curl -A "Mozilla/5.0 ...") and it works fine.
+- Style listing pages embed all products server-side as schema.org JSON-LD
+  (`WebPage → mainEntity offerCatalog → itemListElement` Products) and are
+  paginated with `?p=2` etc. — walk pages until no new SKUs appear.
+- **Tile price trap:** the JSON-LD `offers.price` on listing pages is the
+  PER-BOX price, but the catalogs (and the quote math) use PER-M². The
+  per-m² price is the headline `.ecomplete-price` on the product detail
+  page. Never divide box price by guessed coverage — coverage varies per
+  product (0.9–2.52 m²/box observed). Always confirm on the detail page.
+- Product detail URLs are `slug-plus-base-sku` (e.g.
+  `/arena-beige-ceramic-floor-330x330mm-t0031145`) but some omit the SKU —
+  resolve via `/catalogsearch/result?q=...` and grep hrefs.
+- Style bathroom sub-listing URLs are inconsistent: most are
+  `/our-styles/<slug>/bathroom`, but Mediterranean Hues and Naturally
+  Beautiful use `/our-styles/<slug>/our-styles-<slug>-bathroom`.
