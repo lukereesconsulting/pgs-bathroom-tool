@@ -109,6 +109,16 @@ now that local editing is possible.
   simple lead-capture only — each homepage service card is a `wa.me` link
   with a pre-filled message. No design tool planned for these.
 
+## Active build: Phase 2 completion
+
+Planned and scoped 10 July 2026 — see `PHASE2-BUILD-SPEC.md` in this repo
+root for the full task brief (multi-style catalog generalization, sourcing
+the other 5 Tile Africa styles, a real existing bug fix where the picked
+style is never sent to the backend). Intended to be run in one pass by
+Claude Fable 5 in a dedicated new thread, committing directly to `main`.
+If that build hasn't happened yet, do it before other Phase 2 work. If it
+has, update this section and delete or archive the spec file.
+
 ## Bathroom tool — current gaps (why filters don't match products)
 
 This is the active work: **"filters the customer would use aren't matched
