@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/ads-agent/optimize",
+      "schedule": "0 7 * * *"
+    }
+  ]
+}

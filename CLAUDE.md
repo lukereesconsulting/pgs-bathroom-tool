@@ -69,7 +69,13 @@ against/replace the generic supplier research done during Phase 3 planning:
 
 ## Live site & repo
 
-- **Live URL:** https://pgs-bathroom-tool.vercel.app/
+- **Live URL:** https://pgs-bathroom-tool.vercel.app/ (current, Vercel-provided)
+- **Custom domain purchased 10 July 2026:** `pgseastlondon.co.za` — NOT yet
+  connected to the Vercel project. Connecting it (Vercel project settings →
+  Domains → add domain → point DNS at the registrar) is now part of the
+  Monday to-do list alongside the Google Ads setup — see
+  `docs/phase4-monday-checklist.md`. Until connected, keep sharing the
+  `.vercel.app` URL.
 - **GitHub repo:** https://github.com/lukereesconsulting/pgs-bathroom-tool (branch `main`)
 - **Local clone:** `C:\Users\Luke\Documents\GitHub\pgs-bathroom-tool` — cloned
   10 July 2026 via GitHub Desktop. Tracked in GitHub Desktop alongside
@@ -173,14 +179,143 @@ now that local editing is possible.
 - **Phase 4 — Google Ads "recommends, Christian approves" automation
   agent: being scoped, not built.** Diagram and cost estimate produced
   10 July 2026 (~$10/month running cost target, agent optimizes bids/budget
-  day-to-day, Christian approves major changes). Multi-service complexity
-  noted: PGS sells more than plumbing, so the agent needs to manage several
-  service lines, not just one keyword set — open design question not yet
-  resolved.
+  day-to-day, Christian approves major changes) — now saved permanently at
+  `docs/phase4-ads-agent-plan.md` (was previously only in chat/a PDF, now
+  transcribed into the repo). Multi-service complexity noted: PGS sells
+  more than plumbing, so the agent needs to manage several service lines,
+  not just one keyword set — open design question not yet resolved.
+
+## Phase 4 — Gmail/Google account question, answered (10 July 2026)
+
+Luke asked whether Google Ads can run off a personal account "because we
+don't want to pay for email." Answered directly (no build work done yet):
+
+- **A Google account is always free** — there is no paid tier for a plain
+  Google account or Gmail address. The only thing that costs money in this
+  project is ad spend itself (see cost table in
+  `docs/phase4-ads-agent-plan.md`) plus optionally Google Workspace, which
+  is NOT needed here (Workspace is for custom-domain email like
+  `ck@pgs...co.za`, not required to run Ads).
+- **Simplest path, avoids creating a new mailbox at all:** Google lets you
+  register an *existing* non-Gmail address (e.g. Christian's current
+  `ck@hotmail.co.za`) as a Google Account sign-in via "Create account" →
+  "Use my current email address instead" at accounts.google.com. Zero new
+  inboxes, zero cost.
+- Alternative: a dedicated free Gmail (e.g. `pgsplumbing@gmail.com`) kept
+  separate from Christian's personal inbox — also $0, slightly cleaner for
+  handing off admin access later.
+- Still outstanding: Christian hasn't done either as of 10 July 2026 (see
+  intake section above) — this remains the blocker before any real Google
+  Ads account/API work can start.
+
+## Phase 4 — "can Claude run Google Ads" question, answered (10 July 2026)
+
+Checked what's actually available in this Cowork environment before
+answering:
+
+- **No Google Ads connector is currently connected** in this session (the
+  small-business plugin bundles Gmail/Drive/HubSpot/etc., not Ads).
+- **A marketplace plugin exists that could do this:**
+  `adspirer-ads-agent` (knowledge-work-plugins marketplace) — cross-platform
+  ad management for Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, ~91
+  tools covering keyword research, campaign creation, performance analysis,
+  budget optimization. Not installed/evaluated yet — worth a closer look
+  before building the custom Google Ads API integration the original plan
+  assumed.
+- **The plan's own architecture** (see `docs/phase4-ads-agent-plan.md`) is
+  a from-scratch build against the Google Ads API (needs a developer token,
+  which needs a Google Ads account to exist first — see Gmail question
+  above) — this is the harder, more control-you-own path vs. the plugin.
+- Regardless of which path: the plan's own design keeps "approve any major
+  changes" as human-in-the-loop, and actual ad-spend changes are a
+  financial-consequence action, so full autonomous budget control isn't
+  something to build/grant without deliberately deciding the approval
+  threshold first — not yet designed.
 - Christian's other services (general home improvements, renovations &
   additions, plumbing, rainwater harvesting, waterproofing & painting) are
   simple lead-capture only — each homepage service card is a `wa.me` link
   with a pre-filled message. No design tool planned for these.
+
+## Phase 4 — weekend scaffolding build: done (10 July 2026)
+
+Christian registered `ck@hotmail.co.za` as a Google Account (per the
+guidance above) but the Google Ads account itself, MCC, and API
+credentials aren't set up yet — that's planned for Monday. Luke asked to
+get "all the plumbing" built this weekend so Monday is just plugging in
+credentials. Key finding first: the Google Ads API **developer token
+takes 5–14+ business days to approve** (longer with 2026's backlog), so
+"connect Monday" really means "apply Monday" — see
+`docs/phase4-monday-checklist.md` for the full, ordered checklist.
+
+What got built, all still using mock data (no live Ads account exists
+yet):
+
+- **`docs/phase4-campaign-strategy.md`** — resolves the multi-service
+  open question. 8 PGS services grouped into 5 campaigns (Plumbing,
+  Bathroom Renovations, Home Improvements & Renovations, Outdoor & Water,
+  Waterproofing & Painting) rather than 8 separate campaigns, with
+  starting budget split, keyword themes, negative keywords, and landing
+  pages. Reasoning: a new small-budget advertiser splitting 8 ways gets
+  thin, unreliable data in every campaign.
+- **`index.html` anchor IDs added** — each service card now has an `id`
+  (`#plumbing`, `#decking`, `#paving`, `#home-improvements`,
+  `#renovations`, `#rainwater`, `#waterproofing`) so ad campaigns can deep
+  link to the right card instead of the top of the page. Purely additive,
+  doesn't change any existing links/behavior.
+- **`api/_lib/ads-agent-config.js`** — single source of truth for the 5
+  campaigns (keywords, budget shares, landing pages) and the guardrails
+  (what the agent may auto-apply vs. must escalate to Christian — e.g.
+  budget shifts ≤20% auto-apply, pausing a whole campaign always needs
+  approval). Also defines the env vars live mode needs and exposes
+  `isLiveModeConfigured()`.
+- **`api/_lib/google-ads-client.js`** — wraps the Google Ads API. Runs in
+  `MOCK_MODE` automatically (deterministic seeded synthetic data, not
+  random) until all required env vars are set; has the live GAQL query
+  sketched out in a comment block, not yet implemented since there's
+  nothing to call against. Swapping to live mode Monday needs no changes
+  to any calling code, just filling in that block.
+- **`api/_lib/optimizer.js`** — pure decision logic (no side effects):
+  proposes pausing zero-conversion keywords burning real spend,
+  reallocating budget from a poor-cost-per-lead campaign toward a strong
+  one (capped at the guardrail), and flagging (not auto-pausing) whole
+  campaigns with real spend and zero leads.
+- **`api/_lib/state-store.js`** — persistence for pending approvals +
+  applied-change log. This project has no database (see pricing-visibility
+  note below), so this uses Vercel KV (Upstash, free tier) via its REST
+  API with zero new npm dependency; falls back to in-memory storage when
+  KV isn't connected, which is fine for this weekend's testing but does
+  NOT persist across serverless invocations in production — flagged
+  clearly in the file and the Monday checklist.
+- **`api/ads-agent/review.js`, `optimize.js`, `report.js`, `approve.js`**
+  — the four serverless endpoints implementing the diagram's loop
+  (review → optimize → report → Christian approves). `optimize.js` is
+  wired to `vercel.json`'s daily cron (Vercel's free tier caps cron at
+  once/day per job, which is fine here). `approve.js` needs no login —
+  each pending recommendation gets its own random one-time token, so a
+  single clickable link (meant to go out via WhatsApp/email once that's
+  decided) is what Christian uses to approve or reject.
+- **`ads-agent-dashboard.html`** — internal, unlinked-from-nav dashboard
+  showing the live report, pending approvals with Approve/Reject links,
+  and recent changes. No authentication yet — noted in the Monday
+  checklist as something to add before sharing the URL further.
+- **`vercel.json`** — new file, defines the daily cron hitting
+  `/api/ads-agent/optimize`.
+
+**Verified via smoke tests** (copied into a sandbox dir, not the live repo
+mount, per the bash-mount gotcha below) — confirmed: mock performance data
+is deterministic across calls, budget shares sum to 1.0, the optimizer
+correctly proposes pause_keyword/shift_budget/flag actions at both 7-day
+and 30-day lookbacks, all four HTTP handlers return correct status codes
+with mock req/res objects, and the full approve flow (wrong token
+rejected, correct token applies + logs, repeat-click handled gracefully)
+works end to end.
+
+**Not built this weekend, deliberately left for Monday or later:** the
+live Google Ads API query/mutate implementation (nothing to test it
+against yet), real campaign creation in the Ads UI, report delivery
+mechanism (dashboard-only for now — no email/WhatsApp-Business
+integration added, to avoid new recurring costs before Christian's
+account exists), and dashboard authentication.
 
 ## Phase 2 completion build: done (10 July 2026)
 

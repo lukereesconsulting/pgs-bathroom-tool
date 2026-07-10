@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGS Ads Agent — Dashboard</title>
+<style>
+  :root{ --bg-dark:#111312; --green:#8bc53f; --white:#ffffff; --gray-text:#b9bdb8; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#f4f4f2;color:#1a1a1a;padding:24px;}
+  header{background:var(--bg-dark);color:var(--white);padding:20px 24px;border-radius:12px;margin-bottom:20px;}
+  header h1{font-size:20px;}
+  header p{color:var(--gray-text);font-size:13px;margin-top:4px;}
+  .mock-banner{background:#fff4d6;border:1px solid #e6c85c;color:#6b5518;padding:10px 16px;border-radius:8px;margin-bottom:20px;font-size:13px;}
+  .card{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.04);}
+  .card h2{font-size:15px;margin-bottom:12px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #eee;}
+  th{color:#666;font-weight:600;}
+  .pending-item{border:1px solid #e6c85c;background:#fffaf0;border-radius:8px;padding:12px 14px;margin-bottom:10px;font-size:13px;}
+  .pending-item .actions{margin-top:8px;display:flex;gap:8px;}
+  .pending-item a{display:inline-block;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;}
+  .approve-link{background:var(--green);color:#0f1a04;}
+  .reject-link{background:#e0e0e0;color:#333;}
+  .summary{white-space:pre-wrap;font-size:13px;line-height:1.6;background:#f9f9f7;border-radius:8px;padding:14px;}
+  .empty{color:#999;font-size:13px;}
+  #status{font-size:13px;color:#666;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PGS Ads Agent</h1>
+  <p>Internal dashboard — not linked from the public site. Bookmark this page.</p>
+</header>
+
+<div id="mock-banner" class="mock-banner" style="display:none;">
+  Showing sample data — the live Google Ads account isn't connected yet
+  (see docs/phase4-monday-checklist.md). Numbers below are illustrative only.
+</div>
+
+<div id="status">Loading…</div>
+<div id="content" style="display:none;">
+  <div class="card">
+    <h2>Summary</h2>
+    <div id="summary" class="summary"></div>
+  </div>
+
+  <div class="card">
+    <h2>Waiting on your approval</h2>
+    <div id="pending"></div>
+  </div>
+
+  <div class="card">
+    <h2>Performance by campaign</h2>
+    <table>
+      <thead><tr><th>Campaign</th><th>Clicks</th><th>Cost</th><th>Leads</th></tr></thead>
+      <tbody id="performance-body"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Recent changes</h2>
+    <div id="changes"></div>
+  </div>
+</div>
+
+<script>
+async function load() {
+  const statusEl = document.getElementById('status');
+  try {
+    const res = await fetch('/api/ads-agent/report');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Request failed');
+
+    document.getElementById('mock-banner').style.display =
+      data.performance?.[0]?.source === 'mock' ? 'block' : 'none';
+    document.getElementById('summary').textContent = data.summary;
+
+    const pendingEl = document.getElementById('pending');
+    if (!data.pendingApprovals.length) {
+      pendingEl.innerHTML = '<p class="empty">Nothing waiting — you\'re all caught up.</p>';
+    } else {
+      pendingEl.innerHTML = data.pendingApprovals.map(p => `
+        <div class="pending-item">
+          <div>${p.description}</div>
+          <div class="actions">
+            <a class="approve-link" href="/api/ads-agent/approve?id=${p.id}&token=${p.approveToken}&decision=approved">Approve</a>
+            <a class="reject-link" href="/api/ads-agent/approve?id=${p.id}&token=${p.approveToken}&decision=rejected">Reject</a>
+          </div>
+        </div>`).join('');
+    }
+
+    document.getElementById('performance-body').innerHTML = data.performance.map(c => `
+      <tr><td>${c.name}</td><td>${c.clicks}</td><td>R${c.cost.toFixed(2)}</td><td>${c.leads}</td></tr>
+    `).join('');
+
+    const changesEl = document.getElementById('changes');
+    changesEl.innerHTML = data.recentChanges.length
+      ? '<ul>' + data.recentChanges.map(c => `<li>${c.description}</li>`).join('') + '</ul>'
+      : '<p class="empty">No changes applied yet.</p>';
+
+    statusEl.style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  } catch (err) {
+    statusEl.textContent = 'Could not load report: ' + err.message;
+  }
+}
+load();
+</script>
+
+</body>
+</html>
