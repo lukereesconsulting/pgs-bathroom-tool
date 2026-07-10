@@ -30,7 +30,8 @@ function buildQuote(style, tier, bathType) {
   const lineItems = [];
   let subtotal = 0;
 
-  let bathCategory = `bath_${bathType}`;
+  // UI sends 'built-in'; catalog keys use underscores ('bath_built_in')
+  let bathCategory = `bath_${bathType.replace(/-/g, "_")}`;
   let bath = pick(catalog, bathCategory, tier);
   if (!bath) {
     const fallback = pick(catalog, "bath_freestanding", tier);
@@ -105,7 +106,7 @@ function buildQuote(style, tier, bathType) {
     style: catalog.style,
     tier,
     bath_type_requested: bathType,
-    bath_type_used: bath ? bathCategory.replace("bath_", "") : null,
+    bath_type_used: bath ? bathCategory.replace("bath_", "").replace(/_/g, "-") : null,
     room_size: `${ROOM_LENGTH_M}m x ${ROOM_WIDTH_M}m`,
     line_items: lineItems,
     confirmed_subtotal: round2(subtotal),
