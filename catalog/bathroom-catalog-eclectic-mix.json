@@ -1,0 +1,71 @@
+{
+  "style": "Eclectic Mix",
+  "style_note": "Tile Africa's own name for the UI placeholder 'Eclectic'. Their bathroom range for this style is currently very small (7 products, mostly Croydex accessories), so most categories are excluded from quotes until sourced.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/eclectic-mix/bathroom",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Tile Africa's Eclectic Mix bathroom range is tiny: 7 products, mostly Croydex accessories (baskets, grab bar, toilet seat).",
+    "No baths of either type in the range - the bath line is excluded from quotes entirely for this style.",
+    "Only one vanity (Nuvo Maravilla Black 600mm) - used across all three tiers.",
+    "No toilets (only a Croydex toilet seat), no basin/bath/shower mixers, no floor or wall tiles, no mirrors, no towel rails - all need sourcing from the wider catalogue.",
+    "Shower head budget tier is the Croydex One Function Handset (a hand shower); mid and premium still need sourcing."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" },
+      "mid": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" },
+      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "Croydex One Function Handset, Chrome", "price": 199.99, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    }
+  }
+}
