@@ -138,25 +138,25 @@ lives in git history if ever needed). What landed:
 
 ## Bathroom tool — current gaps
 
-- **Catalog depth varies by style.** Anything unconfirmed is
-  `needs_confirmation`/`price: null` and excluded from quotes with a note
-  (never fabricated). As of 10 July 2026: Modern Metro, Eclectic Mix and
-  Mediterranean Hues are complete at all tiers (the latter two were filled
-  from Tile Africa's wider catalogue on 10 July 2026 — real products and
-  prices, style pairing is our curation, flagged in their `known_gaps`);
-  Luxe Living lacks floor/wall tiles and towel rails; Vintage Romance
-  lacks tapware, toilets and towel rails; Naturally Beautiful lacks
-  tapware, toilets, vanities, mirrors and towel rails. Fill remaining gaps
-  the same way (wider-catalogue style matches, per-m² confirmed on detail
-  pages).
-- **Built-in baths:** Tile Africa's style collections are freestanding-only,
-  but the general catalogue has a built-in baths category (untagged to any
-  style). Eclectic Mix and Mediterranean Hues now carry real `bath_built_in`
-  entries, so the "Built-in" toggle genuinely works there; the other four
-  styles substitute freestanding with a note for Christian. Related bug
-  fixed 10 July 2026: the UI sends `built-in` (hyphen) but catalog keys are
-  `bath_built_in` (underscore) — `buildQuote` now normalises, otherwise
-  built-in would never match even where stocked.
+- **All 6 catalogs are complete as of 10 July 2026.** Every category at
+  every tier in every style has a real, confirmed Tile Africa product and
+  price — no `needs_confirmation` entries remain, and all 36
+  style×tier×bath-type combinations return full 11-item quotes with zero
+  exclusion notes. Where a style's own Tile Africa sub-listing was thin,
+  categories were style-matched from the wider catalogue (real products,
+  real prices; the style pairing is our curation, not Tile Africa's
+  tagging — each catalog's `known_gaps` says exactly which). Tile per-m²
+  prices were individually confirmed on product detail pages, never
+  derived from box prices.
+- **Built-in baths work in all 6 styles.** Tile Africa's style collections
+  are freestanding-only, but the general catalogue has a built-in baths
+  category (untagged to any style) — every catalog now carries real
+  `bath_built_in` entries, so the "Built-in" toggle genuinely changes the
+  quote everywhere. The freestanding-substitution fallback logic in
+  `api/quote.js`/`api/redesign.js` remains as a safety net but no longer
+  fires. Related bug fixed 10 July 2026: the UI sends `built-in` (hyphen)
+  but catalog keys are `bath_built_in` (underscore) — `buildQuote` now
+  normalises, otherwise built-in would never match even where stocked.
 - Room size (3.0m × 2.35m) and wall tile area (14.25m²) are hardcoded
   assumptions in `api/quote.js` / `api/redesign.js`, not measured from the
   photo. A room-measurement feature (click-the-corners style plotter) was
