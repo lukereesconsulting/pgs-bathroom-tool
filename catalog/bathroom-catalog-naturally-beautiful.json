@@ -1,51 +1,55 @@
 {
   "style": "Naturally Beautiful",
-  "style_note": "Tile Africa's own name for the UI placeholder 'Natural' - earthy tones, slate and stone-look tiles, freestanding baths.",
+  "style_note": "Tile Africa's own name for the UI placeholder 'Natural' - earthy tones, slate and stone-look tiles, wood-look walls, matt black and stainless fittings, freestanding stone baths.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/naturally-beautiful/our-styles-naturally-beautiful-bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Confirmed: no built-in/inset bath in Tile Africa's Naturally Beautiful bathroom range - freestanding only (Evox Helena/Danae, Nuvo Flauto).",
-    "No vanity units in the range - only Nuvo Mode counter-top stone basins, which need a counter/cabinet to go with them, so vanity is excluded until sourced.",
-    "Basin mixer: the range lists Abode New Media mixers, but they are named 'Sink Mixer' (kitchen tapware) - excluded until Tile Africa confirms a bathroom basin mixer for this style.",
-    "No toilets, bath mixers, shower mixers, shower heads, mirrors or towel rails in the range - all excluded until sourced.",
-    "Wall tile: only one confirmed option (Galleria Decor Matt, used as premium) - budget and mid still need sourcing. The range's porcelain mosaics are sold per 300x300mm sheet, so they are excluded from per-m2 quoting."
+    "Tile Africa's Naturally Beautiful bathroom sub-listing has no vanities, toilets, tapware, shower heads, mirrors, towel rails or built-in baths - those categories were style-matched from their wider catalogue on 2026-07-10 (wood/oak finishes, matt black and stainless fittings, round mirrors) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
+    "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
+    "The Abode New Media mixers that Tile Africa lists in this style's own bathroom range are named 'Sink Mixer' (kitchen tapware) - deliberately not used; basin mixers here come from the bathroom taps category instead.",
+    "The range's porcelain mosaics are sold per 300x300mm sheet, so they are excluded from per-m2 quoting."
   ],
   "categories": {
     "vanity": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Waterfall Balsa Double Door Vanity, White, 550x470x850mm", "price": 1699.99, "unit": "each" },
+      "mid": { "product": "Evox Albion Double Drawer Vanity, Oak Cambrian, 600mm", "price": 3599.99, "unit": "each" },
+      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Musgo, 1000mm", "price": 8499.99, "unit": "each" }
     },
     "toilet": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Amalphi Top Flush Close Couple Suite, White, incl. seat", "price": 1299.99, "unit": "each" },
+      "mid": { "product": "Solo Maldives Top Flush Toilet Suite, White, 735x395x620mm", "price": 1999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Round, Matt White", "price": 3499.99, "unit": "each" }
     },
     "bath_freestanding": {
       "budget": { "product": "Evox Helena Freestanding Bath with Overflow, White, 1680x800x585mm", "price": 8999.99, "unit": "each" },
       "mid": { "product": "Evox Helena Freestanding Bath with Overflow, Matt Black, 1680x800x585mm", "price": 9999.99, "unit": "each" },
       "premium": { "product": "Nuvo Flauto Freestanding Acrylic Bath, Matt White, 1695x580x795mm", "price": 18999.99, "unit": "each" }
     },
+    "bath_built_in": {
+      "budget": { "product": "Nerida Acrylic Bath, White (no handles)", "price": 1699.99, "unit": "each" },
+      "mid": { "product": "Thandi Acrylic Bath, White", "price": 1799.99, "unit": "each" },
+      "premium": { "product": "Whelk Acrylic Corner Bath, White, 1360x1360x420mm", "price": 2999.99, "unit": "each" }
+    },
     "basin_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Alamere Basin Mixer, Chrome", "price": 899.99, "unit": "each" },
+      "mid": { "product": "Evox Aqualin Round High Basin Mixer, Stainless Steel", "price": 1499.99, "unit": "each" },
+      "premium": { "product": "Nuvo Echo High Basin Mixer, Black", "price": 1949.99, "unit": "each" }
     },
     "bath_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Aqualin Round Bath Mixer with Handshower Kit, Matt Black", "price": 1599.99, "unit": "each" },
+      "mid": { "product": "Evox Alamere Bath Mixer, Chrome", "price": 1749.99, "unit": "each" },
+      "premium": { "product": "Nuvo Round Freestanding Bath Mixer with Hand Shower, Matt Black", "price": 8999.99, "unit": "each" }
     },
     "shower_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Alamere Concealed Mixer", "price": 899.99, "unit": "each" },
+      "mid": { "product": "Evox Aqualin Round Concealed Shower Mixer, Matt Black", "price": 999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Echo Concealed Mixer, Black", "price": 1399.99, "unit": "each" }
     },
     "shower_head": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Round Shower Head Stainless Steel, Matt Black, 200mm", "price": 899.99, "unit": "each" },
+      "mid": { "product": "Evox Round Shower Head Stainless Steel, Matt Black, 250mm", "price": 1099.99, "unit": "each" },
+      "premium": { "product": "Evox Round Shower Head Stainless Steel, Matt Black, 300mm", "price": 1299.99, "unit": "each" }
     },
     "floor_tile": {
       "budget": { "product": "Clifton Beige Ceramic Floor, 400x400mm", "price": 89.99, "unit": "per m2" },
@@ -53,19 +57,19 @@
       "premium": { "product": "African Blue Slate, 400x400mm", "price": 199.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "budget": { "product": "Coco Natural Wood Ceramic Floor/Wall, 250x500mm", "price": 99.99, "unit": "per m2" },
+      "mid": { "product": "Maru Bone Ceramic Floor/Wall, 250x500mm", "price": 129.99, "unit": "per m2" },
       "premium": { "product": "Galleria Decor Matt Ceramic Wall, 300x600mm", "price": 199.99, "unit": "per m2" }
     },
     "mirror": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Meissa Frameless Rectangular Mirror, 600x450mm", "price": 349.99, "unit": "each" },
+      "mid": { "product": "Nuvo Class Mirror Round, 700mm", "price": 2599.99, "unit": "each" },
+      "premium": { "product": "Nuvo Class Mirror Round, 900mm", "price": 3099.99, "unit": "each" }
     },
     "towel_rail": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Cadenza Stainless Steel Towel Rail 600mm, Matt Black", "price": 369.99, "unit": "each" },
+      "mid": { "product": "Evox Cadenza Stainless Steel Double Towel Rail 600mm, Matt Black", "price": 409.99, "unit": "each" },
+      "premium": { "product": "Evox Albion Round Single Towel Rail 600mm, Matt Black", "price": 479.99, "unit": "each" }
     }
   }
 }
