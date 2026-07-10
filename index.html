@@ -48,6 +48,27 @@
   .photo-real{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;}
   .photo-real img{width:100%;height:100%;object-fit:cover;display:block;}
   .photo-real span{position:absolute;bottom:0;left:0;right:0;background:rgba(17,19,18,0.72);color:#fff;font-size:12px;font-weight:600;padding:8px 10px;}
+  .before-after{padding:50px 24px;background:#f4f4f2;}
+  .before-after h2{text-align:center;font-size:22px;font-weight:800;margin-bottom:6px;}
+  .before-after p.sub{text-align:center;color:#6b6f68;font-size:14px;margin-bottom:28px;}
+  .ba-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;}
+  .ba-card{background:#fff;border-radius:14px;padding:14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
+  .ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .ba-placeholder{aspect-ratio:4/3;border-radius:8px;border:1.5px dashed #c9ccc4;background:#ececea;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;color:#9a9d95;}
+  .ba-placeholder .ba-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#63665f;margin-bottom:4px;}
+  .ba-placeholder .ba-hint{font-size:11px;line-height:1.4;}
+  .ba-caption{margin-top:10px;font-size:13px;font-weight:700;color:#333;text-align:center;}
+
+  .testimonials{padding:50px 24px;background:#eef1ec;}
+  .testimonials h2{text-align:center;font-size:22px;font-weight:800;margin-bottom:6px;}
+  .testimonials p.sub{text-align:center;color:#6b6f68;font-size:14px;margin-bottom:28px;}
+  .testimonial-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .testimonial-card{background:#fff;border:1.5px dashed #c9ccc4;border-radius:14px;padding:22px;text-align:center;}
+  .testimonial-card .stars{color:#d8dad4;font-size:16px;letter-spacing:2px;margin-bottom:10px;}
+  .testimonial-card .placeholder-tag{display:inline-block;background:#ececea;color:#9a9d95;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:4px 10px;border-radius:20px;margin-bottom:12px;}
+  .testimonial-card p{color:#9a9d95;font-size:14px;font-style:italic;line-height:1.5;margin-bottom:12px;}
+  .testimonial-card .who{font-size:13px;font-weight:700;color:#63665f;}
+
   .quote-tool{background:#eef6df;padding:50px 24px;}
   .quote-card{max-width:520px;margin:0 auto;background:var(--white);border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.06);text-align:center;}
   .quote-card h2{font-size:20px;font-weight:800;margin-bottom:6px;}
@@ -107,6 +128,59 @@
     <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=17FIXqxq49g3_apcR7N7an5nSOxe4qYNF&amp;sz=w800" alt="Rainwater tank installation"><span>Rainwater tank installation</span></div>
     <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=1BrOeymAL0GPgL3wplDrF2aAO_DPXZa0w&amp;sz=w800" alt="Deck and outdoor living"><span>Deck &amp; outdoor living</span></div>
     <div class="photo-real"><img src="https://drive.google.com/thumbnail?id=14SEAV93uxjPtG4PLoB3qUdxbWq_t0d6F&amp;sz=w800" alt="Stone fire pit at sunset"><span>Stone fire pit &amp; deck</span></div>
+  </div>
+</section>
+
+<section class="before-after">
+  <h2>Before &amp; after</h2>
+  <p class="sub">Real transformations from real PGS jobs &mdash; photos coming soon from Christian</p>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-pair">
+        <div class="ba-placeholder"><span class="ba-label">Before</span><span class="ba-hint">Photo coming soon</span></div>
+        <div class="ba-placeholder"><span class="ba-label">After</span><span class="ba-hint">Photo coming soon</span></div>
+      </div>
+      <div class="ba-caption">Bathroom renovation</div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-pair">
+        <div class="ba-placeholder"><span class="ba-label">Before</span><span class="ba-hint">Photo coming soon</span></div>
+        <div class="ba-placeholder"><span class="ba-label">After</span><span class="ba-hint">Photo coming soon</span></div>
+      </div>
+      <div class="ba-caption">Deck &amp; outdoor living</div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-pair">
+        <div class="ba-placeholder"><span class="ba-label">Before</span><span class="ba-hint">Photo coming soon</span></div>
+        <div class="ba-placeholder"><span class="ba-label">After</span><span class="ba-hint">Photo coming soon</span></div>
+      </div>
+      <div class="ba-caption">Paving &amp; storm water</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What customers say</h2>
+  <p class="sub">Real reviews are on the way &mdash; Christian is collecting these directly from customers</p>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="placeholder-tag">Placeholder</div>
+      <p>&ldquo;Testimonial coming soon.&rdquo;</p>
+      <div class="who">Awaiting customer review</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="placeholder-tag">Placeholder</div>
+      <p>&ldquo;Testimonial coming soon.&rdquo;</p>
+      <div class="who">Awaiting customer review</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="placeholder-tag">Placeholder</div>
+      <p>&ldquo;Testimonial coming soon.&rdquo;</p>
+      <div class="who">Awaiting customer review</div>
+    </div>
   </div>
 </section>
 

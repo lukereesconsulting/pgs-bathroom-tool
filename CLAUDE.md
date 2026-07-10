@@ -291,6 +291,64 @@ Christian for the full breakdown"; full detail still goes to Christian via
 the WhatsApp message text (no database/persistence layer exists in this
 project, so a private per-quote page isn't a lightweight option).
 
+## Resolved — hero image landed
+
+The old "Unverified" note below (kept for history) turned out to be
+resolved: reading `index.html` directly on 10 July 2026 confirmed the
+`.hero` background is a real Google Drive-hosted photo (same file ID as
+the "Stone fire pit at sunset" gallery image), not a placeholder — the
+earlier fix did land at some point. No action needed.
+
+## Content scope from Christian's intake answers (10 July 2026)
+
+Reviewed what Christian has actually confirmed so far (see intake section
+above) against what's safe to put on the live site right now:
+
+- **Ready to add, not yet added:** "26 years qualified plumber" / "~7
+  years running PGS" as a trust line; business hours (08:30–16:30,
+  weekdays, no after-hours emergency call-outs); willingness to respond
+  to emergencies like burst pipes where possible. None of these are on
+  the site yet — flagging as available, Luke to decide placement (hero
+  subtext vs a small trust strip vs footer).
+- **Not ready — don't publish yet:**
+  - Exact service area town list — Christian's spelling ("Kyhsers beach"/
+    "Kai Mouth") needs confirming against the map he shared before any
+    place name goes live.
+  - Payment method — "EMT? Or EFT?" is still ambiguous in Christian's own
+    answer.
+  - No formal guarantee/warranty — this is information *for* Christian's
+    FAQ answers, not something to market as a feature.
+  - Which of the 8 services matter most — not answered, so the services
+    grid order/emphasis hasn't changed.
+  - FAQs — Christian hasn't answered yet.
+- **Testimonials and before/after photos:** not provided yet. Rather than
+  wait, placeholder sections were built on 10 July 2026 so the layout
+  exists and Christian's real content is a drop-in swap — see next
+  section.
+
+## Testimonials & before/after sections: placeholders built (10 July 2026)
+
+Added to `index.html`, between the "Recent work" gallery and the
+bathroom-tool CTA:
+
+- **Before &amp; after** (`.before-after` section): 3 cards (Bathroom
+  renovation, Deck &amp; outdoor living, Paving &amp; storm water), each a
+  side-by-side Before/After image pair. No real photos exist yet, so both
+  slots are dashed-border grey placeholders reading "Photo coming soon" —
+  deliberately *not* styled to look like real photos, so nobody mistakes
+  a placeholder for a finished section. To swap in a real pair, replace
+  the two `.ba-placeholder` divs in a card with `<img>` tags (same pattern
+  as `.photo-real` in the gallery section above it).
+- **What customers say** (`.testimonials` section): 3 cards with grey
+  star icons, a "Placeholder" tag, and *"Testimonial coming soon."* in
+  place of a real quote — deliberately generic, not an invented quote
+  attributed to a fake name, so nothing here could be mistaken for a real
+  (fabricated) review. To swap in a real testimonial, remove the
+  `.placeholder-tag` div, replace the quote text, and fill in `.who` with
+  the customer's real name/suburb.
+- Both sections are static HTML/CSS only, no JS — consistent with the
+  rest of `index.html`.
+
 ## Unverified — check before assuming
 
 A prior session gave Luke a full `index.html` replacement (hero background
