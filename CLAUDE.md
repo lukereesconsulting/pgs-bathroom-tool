@@ -22,6 +22,21 @@ estimated).
   plumbing installs & maintenance, rainwater harvesting, waterproofing &
   painting.
 
+## Suppliers Christian actually uses
+
+Collected from Christian directly (via Luke), as ground truth to check
+against/replace the generic supplier research done during Phase 3 planning:
+
+- **Plumbing:** Plumblink, Vincent Hardware.
+- Bathroom tool currently sources from Tile Africa (see Phase 2 sections
+  below) — not yet reconciled against these. Worth checking whether
+  Plumblink/Vincent Hardware stock the plumbing fixtures (toilets, mixers,
+  shower heads) currently quoted from Tile Africa, and whether prices
+  differ, before treating Tile Africa as the sole source of truth for
+  those categories.
+- Still outstanding: suppliers for decking/fire pits/paving (Phase 3 is
+  paused, see below, so not urgent).
+
 ## Live site & repo
 
 - **Live URL:** https://pgs-bathroom-tool.vercel.app/
@@ -106,10 +121,15 @@ now that local editing is possible.
   marked `needs_confirmation`/`price: null` and excluded with a note).
   Ends in a WhatsApp handoff to Christian. Remaining polish: thin
   supplier ranges for some styles (see gaps section).
-- **Phase 3 — Extend to paving and decking/fire pits: not started.** The
-  homepage shows both with the same green "Design tool" badge as Bathroom
-  renovations, labeled "Design tool · soon" — currently just WhatsApp
-  lead-capture, no actual tool.
+- **Phase 3 — Extend to paving and decking/fire pits: paused, deprioritized
+  by Luke on 10 July 2026 in favour of focusing effort on the bathroom
+  tool.** Not started, and not the current priority — don't pick this up
+  without checking with Luke first, even though the architecture
+  (shared tool engine, per-type catalogs/filters, dedicated page per
+  type, real length×width sizing from day one) was already scoped in
+  conversation. The homepage still shows both with the same green
+  "Design tool" badge as Bathroom renovations, labeled "Design tool ·
+  soon" — currently just WhatsApp lead-capture, no actual tool.
 - **Phase 4 — Google Ads "recommends, Christian approves" automation
   agent: being scoped, not built.** Diagram and cost estimate produced
   10 July 2026 (~$10/month running cost target, agent optimizes bids/budget
