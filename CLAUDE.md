@@ -22,6 +22,36 @@ estimated).
   plumbing installs & maintenance, rainwater harvesting, waterproofing &
   painting.
 
+## Client intake answers from Christian (in progress, 10 July 2026)
+
+Christian is working through the intake questions Luke sent him (business
+background, service area, trust/practical info, FAQs, testimonials).
+**More answers are still coming** — check with Luke before treating this as
+final/complete, and don't build homepage copy from it without confirming
+scope first.
+
+- **Business background:** PGS has been running ~7 years; Christian has been
+  a qualified plumber for 26 years. Not solo — small team plus contractors.
+  "What got him into the work" — still pending.
+- **Service area:** Kidd's Beach to Kei Mouth, including King William's Town
+  (Christian's own spelling was "Kyhsers beach" / "Kai Mouth" — confirm exact
+  place names before publishing). He shared a map — check with Luke for it.
+- **Which services matter most (of the 8 homepage service cards):** asked,
+  not yet answered.
+- **Testimonials:** Christian says he's on it — still collecting, not
+  provided yet.
+- **Trust/practical:**
+  - No formal guarantee or warranty on his work.
+  - Responds to emergencies (e.g. burst pipes) where possible; no stated
+    turnaround time for standard quotes yet.
+  - Payment: EFT (Christian's exact wording was "EMT? Or EFT?" — confirm
+    with him before publishing).
+  - Hours: 08:30–16:30, no after-hours emergency call-outs.
+- **FAQs:** Christian will think on this — not yet answered.
+- **Housekeeping:** phone number confirmed current. Still need to set up a
+  Google Mail account for running the ads (Phase 4) — Christian flagged
+  this himself, not yet done.
+
 ## Suppliers Christian actually uses
 
 Collected from Christian directly (via Luke), as ground truth to check
