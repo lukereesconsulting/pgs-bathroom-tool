@@ -1,13 +1,13 @@
 {
   "style": "Luxe Living",
-  "style_note": "Tile Africa's own name for what the UI placeholder called 'Classic' - opulent finishes, statement freestanding baths, matt black / brushed gold accents.",
+  "style_note": "Tile Africa's own name for what the UI placeholder called 'Classic' - opulent finishes, statement freestanding baths, polished porcelain, marble-look surfaces, brushed gold accents.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/luxe-living/bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Confirmed: no built-in/inset bath exists in Tile Africa's Luxe Living bathroom range - freestanding only.",
-    "No floor tiles, wall tiles or towel rails in the Luxe Living bathroom range at all - all three categories still need sourcing from the wider catalogue.",
-    "Only one shower head (Hansgrohe Vernis Square) and one shower concealed mixer (Hansgrohe Logis Square) in the range - each used for all three tiers."
+    "Tile Africa's Luxe Living bathroom sub-listing has no tiles, towel rails or built-in baths - those categories were style-matched from their wider catalogue on 2026-07-10 (polished porcelain, marble-look Statuario, brushed gold rails) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
+    "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
+    "Only one shower head (Hansgrohe Vernis Square) and one shower concealed mixer (Hansgrohe Logis Square) in the style's own range - each used for all three tiers."
   ],
   "categories": {
     "vanity": {
@@ -24,6 +24,11 @@
       "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm", "price": 8999.99, "unit": "each" },
       "mid": { "product": "Nuvo Allure Freestanding Acrylic Bath, White, 1700x720x800mm", "price": 12999.99, "unit": "each" },
       "premium": { "product": "Nuvo Flauto Freestanding Acrylic Bath, Matt White, 1695x580x795mm", "price": 18999.99, "unit": "each" }
+    },
+    "bath_built_in": {
+      "budget": { "product": "Madeira/Hamburg Fitted Bath, White", "price": 2499.99, "unit": "each" },
+      "mid": { "product": "Lola Rectangle Fitted Acrylic Bath, White", "price": 2999.99, "unit": "each" },
+      "premium": { "product": "Stara Corner Bath, Left, White", "price": 2999.99, "unit": "each" }
     },
     "basin_mixer": {
       "budget": { "product": "Evox Serio High Basin Mixer", "price": 1799.99, "unit": "each" },
@@ -46,14 +51,14 @@
       "premium": { "product": "Hansgrohe Vernis Square 1 Jet Shower Head, Chrome, 230mm", "price": 2199.98, "unit": "each" }
     },
     "floor_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+      "budget": { "product": "Baystone Grey Hard Body Polished Tile, 600x600mm", "price": 159.99, "unit": "per m2" },
+      "mid": { "product": "Agra Polished Porcelain Floor, 600x600mm", "price": 169.99, "unit": "per m2" },
+      "premium": { "product": "Sofita Dove Rectified Gloss Porcelain Floor, 798x1598mm", "price": 399.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+      "budget": { "product": "Super White Glossy Ceramic Wall Tile, 300x600mm", "price": 199.99, "unit": "per m2" },
+      "mid": { "product": "Cambry White Gloss Ceramic Wall, 75x300mm", "price": 350.00, "unit": "per m2" },
+      "premium": { "product": "Statuario Equita Rect Polished Porcelain (marble look), 798x1598mm", "price": 399.99, "unit": "per m2" }
     },
     "mirror": {
       "budget": { "product": "Nuvo Belle Mirror Shelf, Quarzo", "price": 1299.98, "unit": "each" },
@@ -61,9 +66,9 @@
       "premium": { "product": "Nuvo Belle Mirror Shelf, B Soul", "price": 1299.98, "unit": "each" }
     },
     "towel_rail": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Cadenza Stainless Steel Towel Rail 600mm, Brushed Gold", "price": 389.99, "unit": "each" },
+      "mid": { "product": "Evox Cadenza Stainless Steel Double Towel Rail 600mm, Brushed Gold", "price": 439.99, "unit": "each" },
+      "premium": { "product": "Evox Albion Round Double Towel Rail 600mm, Brushed Gold", "price": 589.99, "unit": "each" }
     }
   }
 }
