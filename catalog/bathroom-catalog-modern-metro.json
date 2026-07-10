@@ -5,7 +5,7 @@
   "source": "https://www.tileafrica.co.za/our-styles/modern-metro/bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Confirmed: no built-in/inset bath exists anywhere in Tile Africa's Modern Metro collection - freestanding only.",
+    "No built-in/inset bath exists in Tile Africa's Modern Metro collection - built-in baths sourced from the general built-in baths category on 2026-07-10 (Tile Africa does not tag any built-in bath to a style collection).",
     "Wall tile: Modern Metro's own collection has no wall tile at all - all three tiers sourced from the wider catalogue (grey/monochrome match). Matrix Grey Matt price dropped from R239.99 to R189.99/m2 as of 2026-07-10, moving it from premium to budget tier."
   ],
   "categories": {
@@ -23,6 +23,11 @@
       "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm (special price)", "price": 8999.99, "unit": "each" },
       "mid": { "product": "Nuvo Virtuo Oval Freestanding Acrylic Bath, White, 1700x750x580mm", "price": 12499.99, "unit": "each" },
       "premium": { "product": "Nuvo Voluta Freestanding Acrylic Bath, White, 1700x590x800mm", "price": 16999.99, "unit": "each" }
+    },
+    "bath_built_in": {
+      "budget": { "product": "Nerida Acrylic Bath, White (no handles)", "price": 1699.99, "unit": "each" },
+      "mid": { "product": "Madeira/Hamburg Fitted Bath, White", "price": 2499.99, "unit": "each" },
+      "premium": { "product": "Stara Corner Bath, Right, White", "price": 2999.99, "unit": "each" }
     },
     "basin_mixer": {
       "budget": { "product": "Evox Albion Cold Start Basin Mixer, Chrome", "price": 799.99, "unit": "each" },
