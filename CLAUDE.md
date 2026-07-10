@@ -163,9 +163,13 @@ now that local editing is possible.
   without checking with Luke first, even though the architecture
   (shared tool engine, per-type catalogs/filters, dedicated page per
   type, real length×width sizing from day one) was already scoped in
-  conversation. The homepage still shows both with the same green
-  "Design tool" badge as Bathroom renovations, labeled "Design tool ·
-  soon" — currently just WhatsApp lead-capture, no actual tool.
+  conversation. **Homepage cards reverted 10 July 2026** — Luke flagged
+  that showing a "Design tool · soon" badge on Decking & fire pits and
+  Paving & storm water was misleading since Phase 3 isn't happening
+  right now. Both cards are back to plain lead-capture, matching the
+  other non-bathroom service cards exactly (no badge, no `featured`
+  border) — only Bathroom renovations keeps the green "Design tool"
+  badge, since that's the only one with a real tool live.
 - **Phase 4 — Google Ads "recommends, Christian approves" automation
   agent: being scoped, not built.** Diagram and cost estimate produced
   10 July 2026 (~$10/month running cost target, agent optimizes bids/budget
@@ -412,6 +416,26 @@ bathroom-tool CTA:
   the customer's real name/suburb.
 - Both sections are static HTML/CSS only, no JS — consistent with the
   rest of `index.html`.
+
+## Homepage hero CTAs + service card badges fixed (10 July 2026)
+
+Luke caught two live-site bugs during review:
+
+- **Top-bar "Call 072 762 7657" and hero "Call Christian" / "WhatsApp us"
+  were dead.** All three were `<button>` elements with no `href` at
+  all — visually looked like links but did nothing on click. Fixed by
+  converting them to `<a>` tags: `tel:+27727627657` for both Call
+  buttons, `https://wa.me/27727627657?text=...` (pre-filled generic
+  greeting) for WhatsApp, `target="_blank"` on the WhatsApp one. No CSS
+  changes needed — `.top-cta`/`.btn-primary`/`.btn-outline` were already
+  `display:inline-block`, so they render identically as anchors.
+- **Decking & fire pits and Paving & storm water cards reverted to plain
+  lead-capture**, matching the other four non-bathroom service cards.
+  Removed the `featured` class and the `Design tool · soon` badge from
+  both — Phase 3 is paused (see above) and Luke didn't want the site
+  implying a tool is coming imminently. Only the Bathroom renovations
+  card keeps the green "Design tool" badge now, since it's the only one
+  with a real, live tool.
 
 ## Unverified — check before assuming
 
