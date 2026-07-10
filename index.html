@@ -69,6 +69,20 @@
   .testimonial-card p{color:#9a9d95;font-size:14px;font-style:italic;line-height:1.5;margin-bottom:12px;}
   .testimonial-card .who{font-size:13px;font-weight:700;color:#63665f;}
 
+  .faq{padding:50px 24px;background:#fff;}
+  .faq h2{text-align:center;font-size:22px;font-weight:800;margin-bottom:6px;}
+  .faq p.sub{text-align:center;color:#6b6f68;font-size:14px;margin-bottom:28px;}
+  .faq-list{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+  .faq-item{background:#f4f4f2;border-radius:10px;padding:2px 18px;}
+  .faq-item summary{cursor:pointer;font-weight:700;font-size:15px;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#1a1a1a;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+';font-size:20px;font-weight:400;color:var(--green-dark);flex-shrink:0;}
+  .faq-item[open] summary::after{content:'\2212';}
+  .faq-item p{color:#5a5d57;font-size:14px;line-height:1.6;padding:0 0 16px;margin:0;}
+  .faq-item.placeholder{border:1.5px dashed #c9ccc4;background:#f4f4f2;}
+  .faq-item.placeholder summary{color:#63665f;}
+  .faq-item .placeholder-tag{display:inline-block;background:#ececea;color:#9a9d95;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:3px 8px;border-radius:20px;flex-shrink:0;white-space:nowrap;}
+
   .quote-tool{background:#eef6df;padding:50px 24px;}
   .quote-card{max-width:520px;margin:0 auto;background:var(--white);border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.06);text-align:center;}
   .quote-card h2{font-size:20px;font-weight:800;margin-bottom:6px;}
@@ -189,6 +203,37 @@
     <h2>Design your dream bathroom</h2>
     <p>Upload a photo, pick a style and tier, and see a redesigned version of your actual bathroom plus a real itemized estimate.</p>
     <a href="/bathroom-tool.html" class="btn-primary">Start designing</a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Frequently asked questions</h2>
+  <p class="sub">Straight answers before you get in touch</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How experienced are you?</summary>
+      <p>Christian has been a qualified plumber for 26 years, and has run PGS for about 7 years with a small team plus trusted contractors for bigger jobs.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What areas do you cover?</summary>
+      <p>We're based in East London and cover the surrounding coastal area. Send us a WhatsApp with your suburb or town and we'll confirm we can reach you.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I get a quote?</summary>
+      <p>For bathroom renovations, try the free design tool above for an instant estimate. For anything else, message us on WhatsApp with a few details about the job and we'll get back to you.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What are your hours, and do you handle emergencies?</summary>
+      <p>Our regular hours are 08:30&ndash;16:30, Monday to Friday. We don't offer after-hours emergency call-outs, but Christian does his best to respond quickly to urgent issues like burst pipes during working hours.</p>
+    </details>
+    <details class="faq-item placeholder">
+      <summary>Do you offer a guarantee on your work? <span class="placeholder-tag">Answer coming soon</span></summary>
+      <p>Christian is finalising how he wants to answer this &mdash; ask him directly on WhatsApp for now.</p>
+    </details>
+    <details class="faq-item placeholder">
+      <summary>What payment methods do you accept? <span class="placeholder-tag">Answer coming soon</span></summary>
+      <p>Christian is confirming the exact payment details &mdash; ask him directly on WhatsApp for now.</p>
+    </details>
   </div>
 </section>
 

@@ -437,6 +437,36 @@ Luke caught two live-site bugs during review:
   card keeps the green "Design tool" badge now, since it's the only one
   with a real, live tool.
 
+## FAQ section built (10 July 2026)
+
+Added a `<section class="faq">` to `index.html`, between the "Design
+your dream bathroom" quote-tool CTA and the footer, at Luke's request
+("FAQs at the bottom"). Native `<details>/<summary>` accordion — no JS,
+consistent with the rest of the page. Six questions, mixing real
+confirmed answers with honest placeholders (same `.placeholder-tag`
+pattern as testimonials) for anything Christian hasn't answered yet:
+
+- **Answered for real, from the client intake (see above):** "How
+  experienced are you?" (26 years qualified plumber, ~7 years running
+  PGS), "What areas do you cover?" (deliberately generic — "East London
+  and the surrounding coastal area," no specific town names, since the
+  exact spelling of outlying towns like Kidd's Beach/Kei Mouth still
+  isn't confirmed — see intake section), "What are your hours, and do
+  you handle emergencies?" (08:30–16:30 weekdays, no after-hours
+  call-outs, but responds quickly to things like burst pipes where
+  possible), "How do I get a quote?" (points to the bathroom design tool
+  for instant estimates, WhatsApp for everything else).
+- **Placeholders, marked "Answer coming soon":** "Do you offer a
+  guarantee on your work?" and "What payment methods do you accept?" —
+  both genuinely unresolved (no formal guarantee exists yet and
+  Christian's own payment-method answer was ambiguous — "EMT? Or EFT?"),
+  so rather than publish something that might be wrong, these route the
+  visitor to WhatsApp and get swapped for real copy once Christian
+  confirms.
+- To answer a placeholder for real: remove `class="placeholder"` from
+  the `<details>`, delete the `.placeholder-tag` span from the
+  `<summary>`, and replace the `<p>` text.
+
 ## Unverified — check before assuming
 
 A prior session gave Luke a full `index.html` replacement (hero background
