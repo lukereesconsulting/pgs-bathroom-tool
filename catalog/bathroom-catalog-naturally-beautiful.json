@@ -1,0 +1,71 @@
+{
+  "style": "Naturally Beautiful",
+  "style_note": "Tile Africa's own name for the UI placeholder 'Natural' - earthy tones, slate and stone-look tiles, freestanding baths.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/naturally-beautiful/our-styles-naturally-beautiful-bathroom",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Confirmed: no built-in/inset bath in Tile Africa's Naturally Beautiful bathroom range - freestanding only (Evox Helena/Danae, Nuvo Flauto).",
+    "No vanity units in the range - only Nuvo Mode counter-top stone basins, which need a counter/cabinet to go with them, so vanity is excluded until sourced.",
+    "Basin mixer: the range lists Abode New Media mixers, but they are named 'Sink Mixer' (kitchen tapware) - excluded until Tile Africa confirms a bathroom basin mixer for this style.",
+    "No toilets, bath mixers, shower mixers, shower heads, mirrors or towel rails in the range - all excluded until sourced.",
+    "Wall tile: only one confirmed option (Galleria Decor Matt, used as premium) - budget and mid still need sourcing. The range's porcelain mosaics are sold per 300x300mm sheet, so they are excluded from per-m2 quoting."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "Evox Helena Freestanding Bath with Overflow, White, 1680x800x585mm", "price": 8999.99, "unit": "each" },
+      "mid": { "product": "Evox Helena Freestanding Bath with Overflow, Matt Black, 1680x800x585mm", "price": 9999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Flauto Freestanding Acrylic Bath, Matt White, 1695x580x795mm", "price": 18999.99, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "Clifton Beige Ceramic Floor, 400x400mm", "price": 89.99, "unit": "per m2" },
+      "mid": { "product": "Brussels Carbon Hard Body Floor, 600x600mm", "price": 179.99, "unit": "per m2" },
+      "premium": { "product": "African Blue Slate, 400x400mm", "price": 199.99, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "Galleria Decor Matt Ceramic Wall, 300x600mm", "price": 199.99, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    }
+  }
+}
