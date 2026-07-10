@@ -1,0 +1,70 @@
+{
+  "style": "Vintage Romance",
+  "style_note": "Tile Africa's own name for what the UI placeholder called 'Vintage' - soft classic look, slipper baths, VitrA Valarte furniture in matt ivory/grey.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/vintage-romance/bathroom",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Confirmed: no built-in/inset bath in Tile Africa's Vintage Romance bathroom range - freestanding only (Evox Danae, Aurora Slipper).",
+    "No toilets, basin/bath/shower mixers, shower heads or towel rails in the Vintage Romance bathroom range - all excluded until sourced from the wider catalogue.",
+    "Wall tile: only one confirmed option (Shiny White Ceramic Wall, used as premium) - budget and mid still need sourcing. A Mystic Interlock glass & marble mosaic exists in the range but is sold per 300x300mm sheet, so it is excluded from per-m2 quoting.",
+    "The VitrA Valarte vanities are premium European units (R14.5k-R26k) - this style has no true budget vanity; the cheapest real option is used as 'budget'."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "VitrA Valarte Double Drawer Vanity, Matt Ivory", "price": 14499.99, "unit": "each" },
+      "mid": { "product": "VitrA Valarte Double Drawer Vanity, Matt Grey", "price": 16999.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte Double Drawer Vanity, Matt Ivory (large)", "price": 25999.99, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm", "price": 8999.99, "unit": "each" },
+      "mid": { "product": "Aurora Slipper Bath, White", "price": 12999.99, "unit": "each" },
+      "premium": { "product": "Aurora Slipper Bath, Black", "price": 13999.99, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "Boulder Beige Ceramic Floor, 400x400mm", "price": 89.99, "unit": "per m2" },
+      "mid": { "product": "Nairobi Beige Ceramic Floor, 500x500mm", "price": 99.99, "unit": "per m2" },
+      "premium": { "product": "Nairobi Grey Ceramic Floor, 500x500mm", "price": 99.99, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "Shiny White Ceramic Wall, 300x600mm", "price": 199.99, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Grey, 630x175x760mm", "price": 13499.99, "unit": "each" },
+      "mid": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Ivory, 630x175x760mm", "price": 13499.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Ivory, 980x175x780mm", "price": 16499.99, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    }
+  }
+}
