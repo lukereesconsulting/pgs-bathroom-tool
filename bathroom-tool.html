@@ -38,6 +38,13 @@
   .pill{flex:1;min-width:100px;padding:12px 0;border-radius:8px;border:1.5px solid #d8dad4;background:#fff;font-weight:700;font-size:13px;cursor:pointer;color:#333;text-align:center;}
   .pill.active{background:var(--green);border-color:var(--green);color:#0f1a04;}
 
+  .dim-row{display:flex;gap:10px;}
+  .dim-field{flex:1;}
+  .dim-field label{display:block;font-size:11px;font-weight:700;color:#63665f;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
+  .dim-field input{width:100%;padding:12px;border-radius:8px;border:1.5px solid #d8dad4;font-size:14px;color:#333;background:#fff;}
+  .dim-field input:focus{outline:none;border-color:var(--green);}
+  .dim-hint{font-size:12px;color:#63665f;margin-top:8px;line-height:1.5;}
+
   .upload-box{border:2px dashed #c9ccc4;border-radius:12px;padding:24px;text-align:center;background:#fff;}
   .upload-box input{margin-top:10px;}
 
@@ -106,6 +113,19 @@
     <div class="pill active" onclick="selectBathType('freestanding', this)">Freestanding</div>
     <div class="pill" onclick="selectBathType('built-in', this)">Built-in</div>
   </div>
+
+  <div class="field-label">Room size (metres)</div>
+  <div class="dim-row">
+    <div class="dim-field">
+      <label for="roomLength">Length</label>
+      <input type="number" id="roomLength" min="1.2" max="8" step="0.05" placeholder="e.g. 3.0">
+    </div>
+    <div class="dim-field">
+      <label for="roomWidth">Width</label>
+      <input type="number" id="roomWidth" min="1.2" max="8" step="0.05" placeholder="e.g. 2.35">
+    </div>
+  </div>
+  <div class="dim-hint">Measure wall-to-wall at the longest points, in metres. Every bathroom is a different size &mdash; this is what makes your estimate accurate instead of a generic guess.</div>
 
   <div class="field-label">Your bathroom photo</div>
   <div class="upload-box">
@@ -182,6 +202,13 @@ async function redesign() {
     return;
   }
 
+  const roomLength = parseFloat(document.getElementById('roomLength').value);
+  const roomWidth = parseFloat(document.getElementById('roomWidth').value);
+  if (!roomLength || !roomWidth || roomLength <= 0 || roomWidth <= 0) {
+    statusEl.textContent = 'Enter your bathroom\'s length and width first — it makes the quote accurate.';
+    return;
+  }
+
   goBtn.disabled = true;
   statusEl.textContent = 'Redesigning your bathroom - this calls a real AI image model, takes 10-30 seconds...';
   resultBox.style.display = 'none';
@@ -196,6 +223,8 @@ async function redesign() {
         style: currentStyle,
         tier: currentTier,
         bathType: currentBathType,
+        roomLength,
+        roomWidth,
         imageBase64,
         imageMimeType: fileInput.files[0].type,
       }),

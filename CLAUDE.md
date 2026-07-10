@@ -58,6 +58,15 @@ anything through it.
    to main" → "Push origin").
 5. To view the running app, use Claude in Chrome
    (`mcp__claude-in-chrome__*`) against the live Vercel URL, not localhost.
+6. **`mcp__workspace__bash` mounts this repo but can be stale/torn mid-edit.**
+   During the 10 July 2026 sizing/storage build, the bash mount showed a
+   truncated `api/quote.js` (cut off mid-string) for several calls in a row
+   after an Edit, while the Read/Write/Edit tools already had the complete,
+   correct file. Read/Write/Edit are the authoritative view of this repo —
+   don't trust `bash` file contents here for verification. If you need to
+   actually execute/smoke-test code, copy the files into the session's own
+   `outputs` scratch folder first (that mount was reliable) and run node
+   against the copy, not the live repo mount.
 
 Historically (before the local clone existed) all edits went through
 GitHub.com's web editor — pencil icon → select all → paste → "Commit
@@ -141,7 +150,8 @@ lives in git history if ever needed). What landed:
 - **All 6 catalogs are complete as of 10 July 2026.** Every category at
   every tier in every style has a real, confirmed Tile Africa product and
   price — no `needs_confirmation` entries remain, and all 36
-  style×tier×bath-type combinations return full 11-item quotes with zero
+  style×tier×bath-type combinations return full 12-item quotes (11 + the
+  storage line added in the sizing/storage build below) with zero
   exclusion notes. Where a style's own Tile Africa sub-listing was thin,
   categories were style-matched from the wider catalogue (real products,
   real prices; the style pairing is our curation, not Tile Africa's
@@ -157,13 +167,59 @@ lives in git history if ever needed). What landed:
   fires. Related bug fixed 10 July 2026: the UI sends `built-in` (hyphen)
   but catalog keys are `bath_built_in` (underscore) — `buildQuote` now
   normalises, otherwise built-in would never match even where stocked.
-- Room size (3.0m × 2.35m) and wall tile area (14.25m²) are hardcoded
-  assumptions in `api/quote.js` / `api/redesign.js`, not measured from the
-  photo. A room-measurement feature (click-the-corners style plotter) was
-  part of the original project vision but not yet built.
+- **Room size is now customer-entered (fixed 10 July 2026 — see below).**
+  Not a click-the-corners photo plotter (still not built, was never
+  scoped for this pass) — just two number inputs (length × width in
+  metres) on the form. Floor tile area is now exact math from those
+  inputs; wall tile area is still an estimate (bath surround + shower
+  walls aren't the whole room) but now scales proportionally to the
+  entered room size instead of being a flat constant, and the quote
+  discloses this as an estimate in `notes_for_christian`.
 - Tile Africa product prices drift (Matrix Grey Matt dropped ~20% within a
   day of sourcing) — the Monday price-refresh scheduled task matters; check
   its snapshots before trusting `last_updated` dates.
+
+## Sizing & storage build pass: done (10 July 2026)
+
+Fast-follow to the Phase 2 completion build, done in the same Cowork
+session (not dispatched to Claude Code — small enough to do directly with
+Read/Write/Edit). Two changes, both in `api/quote.js` and
+`api/redesign.js` (still deliberately duplicated, see Repo structure):
+
+- **Real room dimensions replace the hardcoded 3.0m × 2.35m default.**
+  `bathroom-tool.html` now has Length/Width number inputs (metres,
+  clamped 1.2–8m). `buildQuote(style, tier, bathType, roomLength,
+  roomWidth)` computes exact floor area (× 1.15 waste factor, unchanged)
+  from real input, and scales the old hardcoded wall-tile-area assumption
+  (14.25m²) proportionally by room perimeter ratio rather than inventing
+  a new formula. Missing/invalid input (non-numeric, negative, wildly
+  out of range) falls back to the original 3.0×2.35 default silently —
+  `room_size_source` in the quote response says `"customer-entered"` vs
+  `"default estimate"` so this is inspectable. Validated with a bad-input
+  test (`roomLength: "-5", roomWidth: "abc"` → correctly fell back and
+  labeled itself `"default estimate"`).
+- **New `storage` line item, size-conditional.** Every catalog now has
+  `storage_compact` and `storage_full` categories (budget/mid/premium
+  each). `buildQuote` picks `storage_full` when the room's raw floor area
+  (before waste factor) is ≥ 6m², else `storage_compact` — roughly the
+  boundary between a "small" and "comfortable family" bathroom per SA
+  sizing guides (Jaquar/Badeloft references checked before picking the
+  number). All 6 real products sourced from Tile Africa's general
+  catalogue on 10 July 2026 (not tagged to style collections there, same
+  pattern as built-in baths) — Croydex corner basket, Nuvo Class/Locke
+  wall-hung tall units, VitrA Mia/Frame/Valarte tall units and LED mirror
+  cabinets, R799.99–R18,499.99. Finish/colour varies by style where Tile
+  Africa stocks it (e.g. Navy for Eclectic Mix, Ceniza for Naturally
+  Beautiful) — see each catalog's `known_gaps` for exactly which SKU maps
+  to which style/tier/band. "Storage" was added to `groundedCategories`
+  so it now also feeds the AI redesign prompt, same as Mirror.
+- Verified via a node smoke test covering all 36 style×tier×room-size
+  combinations (no missing storage entries, no wrong item counts) plus
+  bad-input/no-input fallback checks — see the bash-mount gotcha above for
+  why this ran against a copy in `outputs`, not the live repo mount.
+- Not done in this pass: an actual photo-based room measurement tool
+  (click-the-corners plotter) — customer still has to type in a tape-
+  measure reading, not something derived from the photo.
 
 ## Scheduled task
 

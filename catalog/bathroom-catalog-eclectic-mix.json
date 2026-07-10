@@ -7,7 +7,8 @@
   "known_gaps": [
     "Tile Africa's Eclectic Mix bathroom sub-listing is tiny (7 products: Croydex accessories, one vanity, one hand shower). Everything else here was style-matched from their wider catalogue on 2026-07-10 (mixed finishes, patterned/slate tiles, black + brushed gold accents) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
     "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
-    "From the style's own listing: the Nuvo Maravilla Black 600mm vanity (budget tier) and the Croydex One Function Handset (budget shower head)."
+    "From the style's own listing: the Nuvo Maravilla Black 600mm vanity (budget tier) and the Croydex One Function Handset (budget shower head).",
+    "Storage: not tagged to style collections by Tile Africa - storage_compact/storage_full sourced from the wider catalogue on 2026-07-10. Compact-mid uses a bold Navy wall-hung unit (Nuvo Locke) to match this style's 'bold mix-and-match' brief; other tiers use black/grey finishes. Two size bands per tier - storage_compact for bathrooms under 6m2 floor area, storage_full at 6m2 and above. The compact-budget option (Croydex corner basket) is a neutral catch-all used across all 6 styles at this tier."
   ],
   "categories": {
     "vanity": {
@@ -69,6 +70,16 @@
       "budget": { "product": "Theos Double Towel Rail 600mm", "price": 299.99, "unit": "each" },
       "mid": { "product": "Evox Allegro Square Single Towel Rail Stainless Steel, Black", "price": 499.99, "unit": "each" },
       "premium": { "product": "Evox Albion Round Double Towel Rail 600mm, Brushed Gold", "price": 589.99, "unit": "each" }
+    },
+    "storage_compact": {
+      "budget": { "product": "Croydex 2 Tier Corner Basket, Aluminium/Black", "price": 799.99, "unit": "each" },
+      "mid": { "product": "Nuvo Locke Wall-Hung Tall Unit, Navy, 351x269x1200mm", "price": 6999.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Grey, 980x175x780mm", "price": 16499.99, "unit": "each" }
+    },
+    "storage_full": {
+      "budget": { "product": "VitrA Mia Tall Unit, Anthracite, 350x350x1450mm", "price": 3499.99, "unit": "each" },
+      "mid": { "product": "VitrA Frame Tall Cabinet Right, Matt Black, 390x390x1510mm", "price": 13499.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte Tall Unit, Matt Grey, 535x395x1985mm", "price": 18499.99, "unit": "each" }
     }
   }
 }

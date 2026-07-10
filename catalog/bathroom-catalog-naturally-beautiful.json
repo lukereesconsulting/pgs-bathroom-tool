@@ -8,7 +8,8 @@
     "Tile Africa's Naturally Beautiful bathroom sub-listing has no vanities, toilets, tapware, shower heads, mirrors, towel rails or built-in baths - those categories were style-matched from their wider catalogue on 2026-07-10 (wood/oak finishes, matt black and stainless fittings, round mirrors) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
     "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
     "The Abode New Media mixers that Tile Africa lists in this style's own bathroom range are named 'Sink Mixer' (kitchen tapware) - deliberately not used; basin mixers here come from the bathroom taps category instead.",
-    "The range's porcelain mosaics are sold per 300x300mm sheet, so they are excluded from per-m2 quoting."
+    "The range's porcelain mosaics are sold per 300x300mm sheet, so they are excluded from per-m2 quoting.",
+    "Storage: not tagged to style collections by Tile Africa - storage_compact/storage_full sourced from the wider catalogue on 2026-07-10. Compact-mid uses an earthy Ceniza (grey-beige) wall-hung unit (Nuvo Locke) to match this style's natural-tones brief; other tiers use black/grey/anthracite finishes. Two size bands per tier - storage_compact for bathrooms under 6m2 floor area, storage_full at 6m2 and above. The compact-budget option (Croydex corner basket) is a neutral catch-all used across all 6 styles at this tier."
   ],
   "categories": {
     "vanity": {
@@ -70,6 +71,16 @@
       "budget": { "product": "Evox Cadenza Stainless Steel Towel Rail 600mm, Matt Black", "price": 369.99, "unit": "each" },
       "mid": { "product": "Evox Cadenza Stainless Steel Double Towel Rail 600mm, Matt Black", "price": 409.99, "unit": "each" },
       "premium": { "product": "Evox Albion Round Single Towel Rail 600mm, Matt Black", "price": 479.99, "unit": "each" }
+    },
+    "storage_compact": {
+      "budget": { "product": "Croydex 2 Tier Corner Basket, Aluminium/Black", "price": 799.99, "unit": "each" },
+      "mid": { "product": "Nuvo Locke Wall Hung Tall Unit, Ceniza, 351x269x1200mm", "price": 5999.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Grey, 630x175x760mm", "price": 13499.99, "unit": "each" }
+    },
+    "storage_full": {
+      "budget": { "product": "VitrA Mia Tall Unit, Anthracite, 350x350x1450mm", "price": 3499.99, "unit": "each" },
+      "mid": { "product": "VitrA Frame Tall Cabinet Right, Matt Black, 390x390x1510mm", "price": 13499.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte Tall Unit, Matt Grey, 535x395x1985mm", "price": 18499.99, "unit": "each" }
     }
   }
 }

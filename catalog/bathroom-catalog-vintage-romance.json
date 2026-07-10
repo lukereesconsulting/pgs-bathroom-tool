@@ -9,7 +9,8 @@
     "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
     "Wall tile budget and mid are the same price (R189.99/m2) - both are real entry-level 300x600 matt ceramics.",
     "The VitrA Valarte vanities are premium European units (R14.5k-R26k) - this style has no true budget vanity; the cheapest real option is used as 'budget'.",
-    "A Mystic Interlock glass & marble mosaic exists in the style's range but is sold per 300x300mm sheet, so it is excluded from per-m2 quoting."
+    "A Mystic Interlock glass & marble mosaic exists in the style's range but is sold per 300x300mm sheet, so it is excluded from per-m2 quoting.",
+    "Storage: not tagged to style collections by Tile Africa - storage_compact/storage_full sourced from the wider catalogue on 2026-07-10, matched by finish (matt ivory, same VitrA Valarte line already used for this style's mirror category). Two size bands per tier - storage_compact for bathrooms under 6m2 floor area, storage_full at 6m2 and above. The compact-budget option (Croydex corner basket) is a neutral catch-all used across all 6 styles at this tier."
   ],
   "categories": {
     "vanity": {
@@ -71,6 +72,16 @@
       "budget": { "product": "Theos Towel Rail 600mm", "price": 249.99, "unit": "each" },
       "mid": { "product": "Evox Albion Round Single Towel Rail 600mm, Chrome", "price": 449.99, "unit": "each" },
       "premium": { "product": "Evox Alto Double Towel Rail", "price": 699.99, "unit": "each" }
+    },
+    "storage_compact": {
+      "budget": { "product": "Croydex 2 Tier Corner Basket, Aluminium/Black", "price": 799.99, "unit": "each" },
+      "mid": { "product": "Nuvo Class Wall Hung Tall Unit, Cotton, 345x269x1200mm", "price": 3499.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Ivory, 980x175x780mm", "price": 16499.99, "unit": "each" }
+    },
+    "storage_full": {
+      "budget": { "product": "VitrA Mia Tall Unit, White, 350x350x1450mm", "price": 3499.99, "unit": "each" },
+      "mid": { "product": "VitrA Frame Tall Cabinet Left, Matt White, 390x390x1510mm", "price": 13499.99, "unit": "each" },
+      "premium": { "product": "VitrA Valarte Tall Unit, Matt Ivory, 535x395x1985mm", "price": 18499.99, "unit": "each" }
     }
   }
 }
