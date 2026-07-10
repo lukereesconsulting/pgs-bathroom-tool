@@ -5,13 +5,29 @@ Ads account is done — see `phase4-campaign-strategy.md` and the code under
 `api/ads-agent/` + `api/_lib/`. This is what's left, in order.
 
 **Heads up on timing:** applying for the Google Ads API developer token
-does not mean same-day access. Google's review typically takes 5–14
-business days, and they've flagged a backlog + tightened verification
-checks as of early 2026. Realistically: Monday = apply + wire up
-everything that doesn't need the token; live automated optimization
-follows once the token clears review, likely 1–3 weeks out. In the
-meantime the agent can still be checked manually via the Google Ads UI —
-nothing here blocks Christian running ads normally.
+does not mean same-day *full* access, but it also doesn't block most of
+this list. Clearing this up because the numbered order below reads more
+sequential than it actually is:
+
+- **You get a developer token string the moment you apply** (step 3) —
+  there's no multi-day wait to receive a token at all.
+- What varies is its **access level**. Google sometimes auto-approves
+  "Explorer Access" instantly, which can already call your real
+  production Ads account (with lower rate limits). Otherwise you're
+  dropped to "Test Account Access" only, which can't touch the real PGS
+  account until Basic/Standard access clears manual review — that's the
+  part that takes 5–14+ business days, longer with 2026's backlog. You
+  won't know which one you got until you actually apply.
+- **Steps 4–6 (OAuth credentials, Vercel KV, most env vars) don't depend
+  on the token's access level at all** — do them regardless of what
+  happens in step 3.
+- **Step 8 (creating the 5 campaigns) happens by hand in the Google Ads
+  website, not through the API** — it only needs the Ads account to exist
+  (step 2), not any API/token status. Start it Monday regardless.
+- **Only step 7 (the agent actually calling the live API for real data/
+  changes) is genuinely gated** by whether you landed Explorer access
+  (works Monday) or Test-only access (waits for Basic/Standard review).
+  Everything else in this list is safe to do in parallel.
 
 ## 0. Connect the custom domain
 
@@ -111,6 +127,11 @@ data — no code changes needed for that switch.
 
 ## 7. Fill in the live query implementation
 
+This is the step actually gated by the token's access level (see timing
+note above) — if you only got Test Account Access Monday, this can be
+written and even tested against a Google-provided test account, but won't
+return real PGS data until Basic/Standard access clears.
+
 `api/_lib/google-ads-client.js` has the mock data path fully working and
 a commented-out sketch of the live GAQL query for `getAllCampaignPerformance`.
 This still needs:
@@ -130,6 +151,10 @@ This still needs:
   to create them with).
 
 ## 8. Create the actual campaigns in Google Ads
+
+Not blocked by anything above — this happens in the Ads UI directly, not
+via the API. Only needs step 2 (the Ads account existing). Do this
+regardless of how step 3's token application goes.
 
 - [ ] Create the 5 campaigns from `phase4-campaign-strategy.md` (Plumbing,
   Bathroom Renovations, Home Improvements & Renovations, Outdoor & Water,

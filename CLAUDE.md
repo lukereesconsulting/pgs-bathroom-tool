@@ -246,6 +246,15 @@ credentials. Key finding first: the Google Ads API **developer token
 takes 5–14+ business days to approve** (longer with 2026's backlog), so
 "connect Monday" really means "apply Monday" — see
 `docs/phase4-monday-checklist.md` for the full, ordered checklist.
+**Correction made same day after Luke asked about the sequencing:** the
+token *string* is issued immediately on applying — only the upgrade from
+Test/Explorer access to full Basic/Standard access is what takes days to
+weeks. Most of the checklist (OAuth setup, Vercel KV, most env vars,
+and — importantly — creating the 5 campaigns themselves, which happens
+in the Ads UI, not via the API) doesn't wait on that upgrade at all. Only
+the live API query implementation is genuinely gated by it. The checklist
+doc now spells this out explicitly instead of reading as one strict
+sequential chain.
 
 What got built, all still using mock data (no live Ads account exists
 yet):
