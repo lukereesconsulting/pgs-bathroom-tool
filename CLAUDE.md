@@ -70,8 +70,10 @@ works as a fallback but the local clone is faster and safer now.
 
 ```
 package.json
-catalog/bathroom-catalog-modern-metro.json   — curated real Tile Africa product/price catalog, budget/mid/premium tiers
-api/quote.js                                  — serverless fn: builds a cost estimate from tier+bathType, returns JSON
+catalog/bathroom-catalog-<style>.json         — curated real Tile Africa product/price catalogs, budget/mid/premium tiers.
+                                                Six styles: modern-metro, mediterranean-hues, luxe-living,
+                                                vintage-romance, eclectic-mix, naturally-beautiful
+api/quote.js                                  — serverless fn: builds a cost estimate from style+tier+bathType, returns JSON
 api/redesign.js                               — serverless fn: same quote-building logic + sends photo to OpenAI images/edits, returns quote + redesigned image (base64)
 index.html                                     — homepage
 bathroom-tool.html                             — the design tool page
@@ -86,13 +88,15 @@ now that local editing is possible.
 
 - **Phase 1 — Homepage: done.** Lead-gen homepage, PGS-branded, services
   grid, real job photos, contact footer.
-- **Phase 2 — Bathroom design tool: done, live, working end-to-end** —
-  this is the current focus (fleshing out more design tabs/styles). Customer
-  uploads a bathroom photo, picks style / price tier / bath type, gets an
-  AI-redesigned photo (OpenAI `gpt-image-1.5` images/edits) plus a cost
-  estimate built from real sourced Tile Africa prices (never fabricated —
-  unconfirmed items are marked `needs_confirmation`/`price: null` and
-  excluded with a note). Ends in a WhatsApp handoff to Christian.
+- **Phase 2 — Bathroom design tool: done, live, working end-to-end,
+  all 6 styles selectable** (multi-style build completed 10 July 2026 —
+  see next section). Customer uploads a bathroom photo, picks style /
+  price tier / bath type, gets an AI-redesigned photo (OpenAI
+  `gpt-image-1.5` images/edits) plus a cost estimate built from real
+  sourced Tile Africa prices (never fabricated — unconfirmed items are
+  marked `needs_confirmation`/`price: null` and excluded with a note).
+  Ends in a WhatsApp handoff to Christian. Remaining polish: thin
+  supplier ranges for some styles (see gaps section).
 - **Phase 3 — Extend to paving and decking/fire pits: not started.** The
   homepage shows both with the same green "Design tool" badge as Bathroom
   renovations, labeled "Design tool · soon" — currently just WhatsApp
@@ -109,39 +113,54 @@ now that local editing is possible.
   simple lead-capture only — each homepage service card is a `wa.me` link
   with a pre-filled message. No design tool planned for these.
 
-## Active build: Phase 2 completion
+## Phase 2 completion build: done (10 July 2026)
 
-Planned and scoped 10 July 2026 — see `PHASE2-BUILD-SPEC.md` in this repo
-root for the full task brief (multi-style catalog generalization, sourcing
-the other 5 Tile Africa styles, a real existing bug fix where the picked
-style is never sent to the backend). Intended to be run in one pass by
-Claude Fable 5 in a dedicated new thread, committing directly to `main`.
-If that build hasn't happened yet, do it before other Phase 2 work. If it
-has, update this section and delete or archive the spec file.
+The multi-style build described in the old `PHASE2-BUILD-SPEC.md` was
+executed by Claude Fable 5 on 10 July 2026 and the spec file deleted (it
+lives in git history if ever needed). What landed:
 
-## Bathroom tool — current gaps (why filters don't match products)
+- All 6 styles sourced from Tile Africa and live in the tool: Modern
+  Metro, Mediterranean Hues, Luxe Living, Vintage Romance, Eclectic Mix,
+  Naturally Beautiful. One catalog JSON per style.
+- **Naming note:** Tile Africa no longer has a "Coastal Hue" collection
+  (the URL 404s) — its current coastal-look collection is **Mediterranean
+  Hues**, which is what fills the old "Coastal" placeholder slot.
+- Backend (`api/quote.js`, `api/redesign.js`) is style-keyed via a
+  `CATALOGS` map + `buildQuote(style, tier, bathType)`; unknown styles
+  400 with the valid slug list, missing style defaults to modern-metro.
+- Frontend bug fixed: `redesign()` now sends `style: currentStyle` in the
+  request body (previously the picked style never reached the backend and
+  every quote was Modern Metro). All 6 style buttons enabled with real
+  Tile Africa names; `selectStyle` now moves the `.active` highlight.
+- Bonus: Modern Metro wall tile is now fully confirmed at all 3 tiers
+  (Matrix Grey Matt R189.99/m² — price dropped from R239.99, Super White
+  Glossy R199.99/m², Cambry Grey Gloss metro-format R350/m²).
 
-This is the active work: **"filters the customer would use aren't matched
-to products available."** Specifically:
+## Bathroom tool — current gaps
 
-- Only **Modern Metro** style has real product data. The UI shows 5 more
-  style options (currently placeholder-labeled Coastal / Classic / Vintage
-  / Eclectic / Natural, all disabled "soon") — Tile Africa's actual names
-  for these collections are Coastal Hue, Luxe Living (Classic), Vintage
-  Romance, Eclectic Mix, and Naturally Beautiful. UI labels should be
-  updated to match real supplier taxonomy once each style is curated.
-- Within Modern Metro, **wall tile budget and mid-tier prices are still
-  unconfirmed** (`needs_confirmation`, `price: null` in
-  `catalog/bathroom-catalog-modern-metro.json`) — only premium was sourced.
-- Modern Metro has **no built-in/inset bath** in Tile Africa's range —
-  freestanding only. The "Built-in" bath-type toggle in the UI is real and
-  selectable, but `api/quote.js` silently substitutes freestanding and adds
-  a note for Christian. This is handled gracefully, not broken, but worth
-  knowing before "fixing" it.
+- **Catalog depth varies a lot by style.** Tile Africa's own bathroom
+  ranges are thin for some styles; anything unconfirmed is
+  `needs_confirmation`/`price: null` and excluded from quotes with a note
+  (never fabricated). Roughly: Modern Metro is complete; Luxe Living is
+  strong (no tiles/towel rails); Vintage Romance and Naturally Beautiful
+  are mid (baths + tiles + some furniture, no tapware or no fittings);
+  Eclectic Mix and Mediterranean Hues are thin (7-product supplier ranges
+  — quotes there are small and carry many "excluded" notes). See each
+  catalog's `known_gaps` for specifics. Filling these gaps means sourcing
+  style-appropriate products from Tile Africa's wider catalogue, the way
+  Modern Metro's wall tiles were done.
+- **No style has a built-in/inset bath** — Tile Africa's ranges are
+  freestanding-only across all six. The "Built-in" toggle stays real and
+  selectable; `api/quote.js` substitutes freestanding with a note for
+  Christian (and if a style has no bath at all, e.g. Eclectic Mix, the
+  bath line is excluded with a note).
 - Room size (3.0m × 2.35m) and wall tile area (14.25m²) are hardcoded
   assumptions in `api/quote.js` / `api/redesign.js`, not measured from the
   photo. A room-measurement feature (click-the-corners style plotter) was
   part of the original project vision but not yet built.
+- Tile Africa product prices drift (Matrix Grey Matt dropped ~20% within a
+  day of sourcing) — the Monday price-refresh scheduled task matters; check
+  its snapshots before trusting `last_updated` dates.
 
 ## Scheduled task
 
