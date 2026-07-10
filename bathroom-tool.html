@@ -86,12 +86,12 @@
 
   <div class="field-label">Style</div>
   <div class="style-grid">
-    <div class="style-opt active" id="style-modern-metro" onclick="selectStyle('modern-metro')">Modern Metro</div>
-    <div class="style-opt disabled">Coastal<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Classic<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Vintage<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Eclectic<span class="soon">soon</span></div>
-    <div class="style-opt disabled">Natural<span class="soon">soon</span></div>
+    <div class="style-opt active" id="style-modern-metro" onclick="selectStyle('modern-metro', this)">Modern Metro</div>
+    <div class="style-opt" onclick="selectStyle('mediterranean-hues', this)">Mediterranean Hues</div>
+    <div class="style-opt" onclick="selectStyle('luxe-living', this)">Luxe Living</div>
+    <div class="style-opt" onclick="selectStyle('vintage-romance', this)">Vintage Romance</div>
+    <div class="style-opt" onclick="selectStyle('eclectic-mix', this)">Eclectic Mix</div>
+    <div class="style-opt" onclick="selectStyle('naturally-beautiful', this)">Naturally Beautiful</div>
   </div>
 
   <div class="field-label">Tier</div>
@@ -140,7 +140,11 @@ let currentTier = 'budget';
 let currentBathType = 'freestanding';
 let lastQuote = null;
 
-function selectStyle(s){ currentStyle = s; }
+function selectStyle(s, el){
+  currentStyle = s;
+  document.querySelectorAll('.style-grid .style-opt').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
 
 function selectTier(t, el){
   currentTier = t;
@@ -189,6 +193,7 @@ async function redesign() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        style: currentStyle,
         tier: currentTier,
         bathType: currentBathType,
         imageBase64,
