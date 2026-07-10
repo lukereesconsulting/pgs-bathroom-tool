@@ -1,0 +1,70 @@
+{
+  "style": "Mediterranean Hues",
+  "style_note": "Tile Africa's current name for the coastal-look collection - this fills the UI placeholder 'Coastal'. The 'Coastal Hue' name in earlier planning no longer exists on their site (URL 404s); Mediterranean Hues is its replacement in their live style taxonomy.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/mediterranean-hues/our-styles-mediterranean-hues-bathroom",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Tile Africa's Mediterranean Hues bathroom sub-listing is tapware-only: 7 mixers (Evox Kelia and Caspian), nothing else.",
+    "No vanities, toilets, baths (either type), shower heads, wall tiles, mirrors or towel rails in the range - all excluded until sourced from the wider catalogue.",
+    "Floor tile premium (Oaklore Bianco wood-look) comes from the Mediterranean Hues collection page rather than the bathroom sub-listing; budget and mid floor tiles still need sourcing.",
+    "Only two bath mixers in the range - the Caspian handshower kit is used for both mid and premium."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "Evox Kelia Basin Mixer, Chrome", "price": 699.99, "unit": "each" },
+      "mid": { "product": "Evox Caspian Basin Mixer, Chrome", "price": 999.99, "unit": "each" },
+      "premium": { "product": "Evox Caspian High Basin Mixer, Chrome", "price": 1749.99, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "Evox Kelia Bath Mixer, Chrome", "price": 1399.99, "unit": "each" },
+      "mid": { "product": "Evox Caspian Bath Mixer with Handshower Kit", "price": 2099.99, "unit": "each" },
+      "premium": { "product": "Evox Caspian Bath Mixer with Handshower Kit", "price": 2099.99, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "Evox Caspian Concealed Mixer, Chrome", "price": 999.99, "unit": "each" },
+      "mid": { "product": "Evox Caspian Concealed Mixer, Chrome", "price": 999.99, "unit": "each" },
+      "premium": { "product": "Evox Caspian Diverter Mixer, Chrome", "price": 1449.99, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "Oaklore Bianco Wood Look Ceramic Floor Tile, 195x1000mm", "price": 279.99, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    }
+  }
+}
