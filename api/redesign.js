@@ -1,11 +1,18 @@
-const catalog = require("../catalog/bathroom-catalog-modern-metro.json");
+const CATALOGS = {
+  "modern-metro": require("../catalog/bathroom-catalog-modern-metro.json"),
+  "mediterranean-hues": require("../catalog/bathroom-catalog-mediterranean-hues.json"),
+  "luxe-living": require("../catalog/bathroom-catalog-luxe-living.json"),
+  "vintage-romance": require("../catalog/bathroom-catalog-vintage-romance.json"),
+  "eclectic-mix": require("../catalog/bathroom-catalog-eclectic-mix.json"),
+  "naturally-beautiful": require("../catalog/bathroom-catalog-naturally-beautiful.json"),
+};
 
 const ROOM_LENGTH_M = 3.0;
 const ROOM_WIDTH_M = 2.35;
 const FLOOR_WASTE_FACTOR = 1.15;
 const WALL_TILE_AREA_M2 = 14.25;
 
-function pick(category, tier) {
+function pick(catalog, category, tier) {
   const cat = catalog.categories[category];
   if (!cat) return null;
   const entry = cat[tier];
@@ -17,15 +24,16 @@ function round2(n) {
   return Math.round(n * 100) / 100;
 }
 
-function buildQuote(tier, bathType) {
+function buildQuote(style, tier, bathType) {
+  const catalog = CATALOGS[style] || CATALOGS["modern-metro"];
   const notes = [];
   const lineItems = [];
   let subtotal = 0;
 
   let bathCategory = `bath_${bathType}`;
-  let bath = pick(bathCategory, tier);
+  let bath = pick(catalog, bathCategory, tier);
   if (!bath) {
-    const fallback = pick("bath_freestanding", tier);
+    const fallback = pick(catalog, "bath_freestanding", tier);
     if (fallback) {
       notes.push(
         `Customer selected '${bathType}' bath, but ${catalog.style} style only offers ` +
@@ -38,6 +46,8 @@ function buildQuote(tier, bathType) {
   if (bath) {
     lineItems.push({ category: "Bath", product: bath.product, unit: bath.unit, quantity: "1", cost: bath.price });
     subtotal += bath.price;
+  } else {
+    notes.push("Bath: no confirmed price yet for this style/tier, excluded from quote.");
   }
 
   const fixedCategories = [
@@ -46,7 +56,7 @@ function buildQuote(tier, bathType) {
     ["shower_head", "Shower head"], ["mirror", "Mirror"], ["towel_rail", "Towel rail"],
   ];
   for (const [category, label] of fixedCategories) {
-    const item = pick(category, tier);
+    const item = pick(catalog, category, tier);
     if (item) {
       lineItems.push({ category: label, product: item.product, unit: item.unit, quantity: "1", cost: item.price });
       subtotal += item.price;
@@ -56,7 +66,7 @@ function buildQuote(tier, bathType) {
   }
 
   const floorArea = round2(ROOM_LENGTH_M * ROOM_WIDTH_M * FLOOR_WASTE_FACTOR);
-  const floorTile = pick("floor_tile", tier);
+  const floorTile = pick(catalog, "floor_tile", tier);
   if (floorTile) {
     const cost = round2(floorArea * floorTile.price);
     lineItems.push({
@@ -68,7 +78,7 @@ function buildQuote(tier, bathType) {
     notes.push("Floor tile: no confirmed price yet, excluded from quote.");
   }
 
-  const wallTile = pick("wall_tile", tier);
+  const wallTile = pick(catalog, "wall_tile", tier);
   if (wallTile) {
     const cost = round2(WALL_TILE_AREA_M2 * wallTile.price);
     lineItems.push({
@@ -110,21 +120,26 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const { tier, bathType, imageBase64, imageMimeType } = req.body || {};
+  const { style, tier, bathType, imageBase64, imageMimeType } = req.body || {};
 
   if (!imageBase64) {
     res.status(400).json({ error: "No photo provided - imageBase64 is missing from the request body" });
     return;
   }
 
+  const safeStyle = String(style || "modern-metro").toLowerCase();
   const safeTier = String(tier || "budget").toLowerCase();
   const safeBathType = String(bathType || "freestanding").toLowerCase();
+  if (!CATALOGS[safeStyle]) {
+    res.status(400).json({ error: `style must be one of: ${Object.keys(CATALOGS).join(", ")}` });
+    return;
+  }
   if (!["budget", "mid", "premium"].includes(safeTier)) {
     res.status(400).json({ error: "tier must be 'budget', 'mid', or 'premium'" });
     return;
   }
 
-  const quote = buildQuote(safeTier, safeBathType);
+  const quote = buildQuote(safeStyle, safeTier, safeBathType);
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
