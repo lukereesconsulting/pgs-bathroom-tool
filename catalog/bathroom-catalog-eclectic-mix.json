@@ -1,71 +1,74 @@
 {
   "style": "Eclectic Mix",
-  "style_note": "Tile Africa's own name for the UI placeholder 'Eclectic'. Their bathroom range for this style is currently very small (7 products, mostly Croydex accessories), so most categories are excluded from quotes until sourced.",
+  "style_note": "Tile Africa's own name for the UI placeholder 'Eclectic' - bold mix-and-match: mixed metal finishes (chrome/black/brushed gold), patterned tiles, slate, black and coral statement pieces.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/eclectic-mix/bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Tile Africa's Eclectic Mix bathroom range is tiny: 7 products, mostly Croydex accessories (baskets, grab bar, toilet seat).",
-    "No baths of either type in the range - the bath line is excluded from quotes entirely for this style.",
-    "Only one vanity (Nuvo Maravilla Black 600mm) - used across all three tiers.",
-    "No toilets (only a Croydex toilet seat), no basin/bath/shower mixers, no floor or wall tiles, no mirrors, no towel rails - all need sourcing from the wider catalogue.",
-    "Shower head budget tier is the Croydex One Function Handset (a hand shower); mid and premium still need sourcing."
+    "Tile Africa's Eclectic Mix bathroom sub-listing is tiny (7 products: Croydex accessories, one vanity, one hand shower). Everything else here was style-matched from their wider catalogue on 2026-07-10 (mixed finishes, patterned/slate tiles, black + brushed gold accents) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
+    "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
+    "From the style's own listing: the Nuvo Maravilla Black 600mm vanity (budget tier) and the Croydex One Function Handset (budget shower head)."
   ],
   "categories": {
     "vanity": {
       "budget": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" },
-      "mid": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" },
-      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 600mm", "price": 6499.99, "unit": "each" }
+      "mid": { "product": "Nuvo Maravilla Floor Standing Vanity, Musgo, 800mm", "price": 7999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Musgo, 1000mm", "price": 8499.99, "unit": "each" }
     },
     "toilet": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Astro V2 Close Coupled Toilet Suite, Round, White", "price": 1499.99, "unit": "each" },
+      "mid": { "product": "Evox Atmos Close Couple Suite, Square, White", "price": 1999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Square, Matt Black", "price": 3999.99, "unit": "each" }
     },
     "bath_freestanding": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm", "price": 8999.99, "unit": "each" },
+      "mid": { "product": "Evox Selene Oval Freestanding Bath, Gloss Black", "price": 10999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Mode Rect Freestanding Stone Bath, Coral, 1600x720x436mm", "price": 13999.99, "unit": "each" }
+    },
+    "bath_built_in": {
+      "budget": { "product": "Nerida Acrylic Bath, White (no handles)", "price": 1699.99, "unit": "each" },
+      "mid": { "product": "Aqua Oval Fitted Bath, White", "price": 1999.99, "unit": "each" },
+      "premium": { "product": "Lola Rectangle Fitted Acrylic Bath, White", "price": 2999.99, "unit": "each" }
     },
     "basin_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Tasmin Basin Mixer, Chrome", "price": 399.99, "unit": "each" },
+      "mid": { "product": "Nuvo Arc Basin Mixer, Matt Black", "price": 949.95, "unit": "each" },
+      "premium": { "product": "Evox Aqualin Round High Basin Mixer, Brushed Gold", "price": 1799.99, "unit": "each" }
     },
     "bath_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Tasmin Bath Mixer, Chrome", "price": 699.99, "unit": "each" },
+      "mid": { "product": "Evox Victoria Bath Mixer with Hand Shower Kit, Chrome", "price": 1549.99, "unit": "each" },
+      "premium": { "product": "Evox Serio Bath Mixer, Black", "price": 2999.99, "unit": "each" }
     },
     "shower_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Tasmin Concealed Mixer, Chrome", "price": 399.99, "unit": "each" },
+      "mid": { "product": "Evox Serio Concealed Mixer, Black", "price": 1299.99, "unit": "each" },
+      "premium": { "product": "Nuvo Linea Concealed Mixer, Black", "price": 1699.99, "unit": "each" }
     },
     "shower_head": {
       "budget": { "product": "Croydex One Function Handset, Chrome", "price": 199.99, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "mid": { "product": "Evox Round Shower Head Stainless Steel, Matt Black, 200mm", "price": 899.99, "unit": "each" },
+      "premium": { "product": "Evox Shower Head Stainless Steel Square, Brushed Gold, 200mm", "price": 1199.99, "unit": "each" }
     },
     "floor_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+      "budget": { "product": "Aspen Light-Slate Slate Ceramic Floor Tile, 330x330mm", "price": 89.99, "unit": "per m2" },
+      "mid": { "product": "Leswika Cobble Mix Ceramic Floor Tile, 500x500mm", "price": 109.99, "unit": "per m2" },
+      "premium": { "product": "Rich Autumn Slate, 400x400mm", "price": 259.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+      "budget": { "product": "Elyse Ceramic Wall Tile Feature, 250x400mm", "price": 159.99, "unit": "per m2" },
+      "mid": { "product": "Galleria Plain Matt Ceramic Wall, 300x600mm", "price": 189.99, "unit": "per m2" },
+      "premium": { "product": "Galleria Decor Matt Ceramic Wall, 300x600mm", "price": 199.99, "unit": "per m2" }
     },
     "mirror": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Orion Oval Mirror, 600x450mm", "price": 399.99, "unit": "each" },
+      "mid": { "product": "Evox Polaris Frameless Rectangular Curved Mirror, 800x600mm", "price": 799.99, "unit": "each" },
+      "premium": { "product": "Nuvo Class LED Mirror Round, 700mm", "price": 5199.99, "unit": "each" }
     },
     "towel_rail": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Theos Double Towel Rail 600mm", "price": 299.99, "unit": "each" },
+      "mid": { "product": "Evox Allegro Square Single Towel Rail Stainless Steel, Black", "price": 499.99, "unit": "each" },
+      "premium": { "product": "Evox Albion Round Double Towel Rail 600mm, Brushed Gold", "price": 589.99, "unit": "each" }
     }
   }
 }
