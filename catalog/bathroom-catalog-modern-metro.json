@@ -3,10 +3,10 @@
   "style_note": "This is Tile Africa's own name for what we've been calling 'Urban' - neutral greys, monochromatic, industrial-practical.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/modern-metro/bathroom",
-  "last_updated": "2026-07-09",
+  "last_updated": "2026-07-10",
   "known_gaps": [
     "Confirmed: no built-in/inset bath exists anywhere in Tile Africa's Modern Metro collection - freestanding only.",
-    "Wall tile: Modern Metro's own collection has no wall tile at all. One matching grey wall tile found via general site search used as premium. Budget and mid wall tile options still need sourcing."
+    "Wall tile: Modern Metro's own collection has no wall tile at all - all three tiers sourced from the wider catalogue (grey/monochrome match). Matrix Grey Matt price dropped from R239.99 to R189.99/m2 as of 2026-07-10, moving it from premium to budget tier."
   ],
   "categories": {
     "vanity": {
@@ -50,9 +50,9 @@
       "premium": { "product": "Miami Light Grey Hard Body Floor, 600x600mm", "price": 199.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "Matrix Grey Matt Ceramic Wall Tile, 300x600mm", "price": 239.99, "unit": "per m2" }
+      "budget": { "product": "Matrix Grey Matt Ceramic Wall Tile, 300x600mm", "price": 189.99, "unit": "per m2" },
+      "mid": { "product": "Super White Glossy Ceramic Wall Tile, 300x600mm", "price": 199.99, "unit": "per m2" },
+      "premium": { "product": "Cambry Grey Gloss Ceramic Wall (metro format), 75x300mm", "price": 350.00, "unit": "per m2" }
     },
     "mirror": {
       "budget": { "product": "Nuvo Belle Mirror Shelf, Quarzo", "price": 1299.98, "unit": "each" },
