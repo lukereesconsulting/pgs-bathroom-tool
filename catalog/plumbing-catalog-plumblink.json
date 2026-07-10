@@ -1,0 +1,45 @@
+{
+  "supplier": "Plumblink",
+  "source": "https://www.plumblink.co.za/",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Plumblink has no style collections (unlike Tile Africa) - it's a national plumbing/bathroom/kitchenware chain, not organised by look. The same real products are used across all 6 PGS styles, differentiated only by budget/mid/premium tier.",
+    "Plumblink only sells plumbing fixtures - no tiles, vanities, mirrors, towel rails, or storage furniture. Those categories always come from the Tile Africa catalogs regardless of which store is selected.",
+    "Built-in/inset baths were not found as a searchable product line on plumblink.co.za (site search returned kitchen sinks/troughs for 'inset bath' and 'fitted bath', not bathtubs) - only 'bath_freestanding' is sourced here. If a customer picks Built-in + Plumblink, buildQuote falls back to the Tile Africa built-in bath price for that style/tier.",
+    "Plumblink's site search is inconsistent - two-word phrases like 'toilet suite' and 'freestanding bath' return real filtered results, but some two/three-word phrases (e.g. 'shower mixer', 'concealed shower mixer', 'built in bath') return the full unfiltered catalog instead. Products below were sourced from whichever query phrasing actually filtered correctly, cross-checked against the Taps & Mixers category browse.",
+    "'bath_mixer' and 'shower_mixer' are both sourced from real Plumblink products, kept deliberately distinct: bath_mixer uses wall-mounted bath/shower mixer valves (STH Echo/Kappa range), shower_mixer uses Plumline Mensa 'Exposed Shower Mixer & Column Set' products which are explicitly labelled as shower mixers, not bath mixers.",
+    "All prices are Plumblink's own listed e-commerce prices, incl. VAT, confirmed live on 2026-07-10 - not estimated or derived."
+  ],
+  "categories": {
+    "toilet": {
+      "budget": { "product": "Betta Bettaflush CC Toilet Suite (Pan, TDF Cistern, Mech, Seat)", "price": 1199.00, "unit": "each" },
+      "mid": { "product": "Betta Classico CC Toilet Suite (Pan, FF Cistern, Mech, Seat)", "price": 1999.00, "unit": "each" },
+      "premium": { "product": "Cobra Welcome Closed Couple Suite (Pan, Cistern, Mech, Seat)", "price": 4026.64, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "Betta Monroe Bath Freestanding White c/w Black Legs, 1700x780mm", "price": 11449.00, "unit": "each" },
+      "mid": { "product": "Betta Melissa Bath Seamless Freestanding White, 1700x800mm", "price": 12599.00, "unit": "each" },
+      "premium": { "product": "Crystallite Luna 1.5 Freestanding Rounded/Rect Bath White, 1490x705mm", "price": 17212.99, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "STH Echo Basin Mixer 1TH, Chrome", "price": 838.86, "unit": "each" },
+      "mid": { "product": "Grohe Eurosmart Basin Mixer Small 1TH", "price": 1492.08, "unit": "each" },
+      "premium": { "product": "STH Kappa Raised Basin Mixer 1TH, Chrome", "price": 2203.96, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "STH Kappa U/Wall Bath Shower Mixer, Chrome", "price": 978.72, "unit": "each" },
+      "mid": { "product": "STH Echo U/Wall Diverter Bath/Shower Mixer, Chrome", "price": 1372.26, "unit": "each" },
+      "premium": { "product": "STH Kappa W/T Bath Mixer incl. Handshower, Chrome", "price": 2925.76, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "STH Kappa UW Diverter Bath Shower Mixer, Chrome", "price": 1263.85, "unit": "each" },
+      "mid": { "product": "Plumline Mensa Exposed Shower Mixer & Column Set, Chrome", "price": 2999.00, "unit": "each" },
+      "premium": { "product": "Plumline Mensa Exposed Shower Mixer & Column Set, Black", "price": 3499.00, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "Plumline Standard Balljoint Shower Rose 15mm, Chrome", "price": 129.00, "unit": "each" },
+      "mid": { "product": "Plumline Ultrathin Stainless Steel Round Shower Rose, 200mm", "price": 549.00, "unit": "each" },
+      "premium": { "product": "Merelli Nero Maxi Rainshower, Chrome/Black Face", "price": 2299.00, "unit": "each" }
+    }
+  }
+}

@@ -38,6 +38,13 @@
   .pill{flex:1;min-width:100px;padding:12px 0;border-radius:8px;border:1.5px solid #d8dad4;background:#fff;font-weight:700;font-size:13px;cursor:pointer;color:#333;text-align:center;}
   .pill.active{background:var(--green);border-color:var(--green);color:#0f1a04;}
 
+  .supplier-note{font-size:12px;color:#63665f;margin-top:8px;line-height:1.5;}
+  .vh-notice{display:none;background:#fff8e6;border:1px solid #f0deab;border-radius:10px;padding:16px;font-size:13px;color:#7a6420;margin-top:16px;line-height:1.5;}
+  .vh-notice a{display:inline-block;margin-top:10px;background:#25D366;color:#fff;padding:12px 20px;border-radius:8px;font-weight:800;font-size:13px;}
+
+  .section-header{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#8bc53f;background:#f4f4f2;padding:10px 20px;margin:0 -20px;border-bottom:1px solid #eee;}
+  .section-header:first-child{border-radius:12px 12px 0 0;}
+
   .dim-row{display:flex;gap:10px;}
   .dim-field{flex:1;}
   .dim-field label{display:block;font-size:11px;font-weight:700;color:#63665f;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
@@ -114,26 +121,41 @@
     <div class="pill" onclick="selectBathType('built-in', this)">Built-in</div>
   </div>
 
-  <div class="field-label">Room size (metres)</div>
-  <div class="dim-row">
-    <div class="dim-field">
-      <label for="roomLength">Length</label>
-      <input type="number" id="roomLength" min="1.2" max="8" step="0.05" placeholder="e.g. 3.0">
-    </div>
-    <div class="dim-field">
-      <label for="roomWidth">Width</label>
-      <input type="number" id="roomWidth" min="1.2" max="8" step="0.05" placeholder="e.g. 2.35">
-    </div>
+  <div class="field-label">Store</div>
+  <div class="pill-row" id="supplierRow">
+    <div class="pill active" onclick="selectSupplier('tile-africa', this)">Tile Africa</div>
+    <div class="pill" onclick="selectSupplier('plumblink', this)">Plumblink</div>
+    <div class="pill" onclick="selectSupplier('vincent-hardware', this)">Vincent Hardware</div>
   </div>
-  <div class="dim-hint">Measure wall-to-wall at the longest points, in metres. Every bathroom is a different size &mdash; this is what makes your estimate accurate instead of a generic guess.</div>
-
-  <div class="field-label">Your bathroom photo</div>
-  <div class="upload-box">
-    <div>Take a photo straight-on from the doorway if you can &mdash; it helps keep the redesign accurate.</div>
-    <input type="file" id="photo" accept="image/*">
+  <div class="supplier-note" id="supplierNote">Tiles, vanity, mirror and storage always come from Tile Africa. Picking Plumblink swaps just the plumbing fixtures &mdash; toilet, bath, mixers and shower head &mdash; to their pricing instead.</div>
+  <div class="vh-notice" id="vhNotice">
+    Vincent Hardware doesn't have an online store, so we can't generate a live quote from them here. Christian can get you exact Vincent Hardware pricing directly &mdash; just ask him on WhatsApp.
+    <br>
+    <a href="https://wa.me/27727627657?text=Hi%20Christian%2C%20can%20you%20get%20me%20a%20quote%20using%20Vincent%20Hardware%20pricing%20for%20my%20bathroom%3F" target="_blank">Ask Christian on WhatsApp</a>
   </div>
 
-  <button class="go-btn" id="goBtn" onclick="redesign()">See my redesign</button>
+  <div id="quoteFormRest">
+    <div class="field-label">Room size (metres)</div>
+    <div class="dim-row">
+      <div class="dim-field">
+        <label for="roomLength">Length</label>
+        <input type="number" id="roomLength" min="1.2" max="8" step="0.05" placeholder="e.g. 3.0">
+      </div>
+      <div class="dim-field">
+        <label for="roomWidth">Width</label>
+        <input type="number" id="roomWidth" min="1.2" max="8" step="0.05" placeholder="e.g. 2.35">
+      </div>
+    </div>
+    <div class="dim-hint">Measure wall-to-wall at the longest points, in metres. Every bathroom is a different size &mdash; this is what makes your estimate accurate instead of a generic guess.</div>
+
+    <div class="field-label">Your bathroom photo</div>
+    <div class="upload-box">
+      <div>Take a photo straight-on from the doorway if you can &mdash; it helps keep the redesign accurate.</div>
+      <input type="file" id="photo" accept="image/*">
+    </div>
+
+    <button class="go-btn" id="goBtn" onclick="redesign()">See my redesign</button>
+  </div>
   <div id="status"></div>
 
   <div class="result" id="resultBox">
@@ -158,12 +180,33 @@
 let currentStyle = 'modern-metro';
 let currentTier = 'budget';
 let currentBathType = 'freestanding';
+let currentSupplier = 'tile-africa';
 let lastQuote = null;
 
 function selectStyle(s, el){
   currentStyle = s;
   document.querySelectorAll('.style-grid .style-opt').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
+}
+
+function selectSupplier(s, el){
+  currentSupplier = s;
+  document.querySelectorAll('#supplierRow .pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+
+  const vhNotice = document.getElementById('vhNotice');
+  const quoteFormRest = document.getElementById('quoteFormRest');
+  const supplierNote = document.getElementById('supplierNote');
+
+  if (s === 'vincent-hardware') {
+    vhNotice.style.display = 'block';
+    quoteFormRest.style.display = 'none';
+    supplierNote.style.display = 'none';
+  } else {
+    vhNotice.style.display = 'none';
+    quoteFormRest.style.display = 'block';
+    supplierNote.style.display = 'block';
+  }
 }
 
 function selectTier(t, el){
@@ -223,6 +266,7 @@ async function redesign() {
         style: currentStyle,
         tier: currentTier,
         bathType: currentBathType,
+        supplier: currentSupplier,
         roomLength,
         roomWidth,
         imageBase64,
@@ -265,16 +309,43 @@ function renderResult(data) {
 
   const itemsBox = document.getElementById('itemsBox');
   itemsBox.innerHTML = '';
-  q.line_items.forEach(li => {
+
+  function addRow(li) {
     const row = document.createElement('div');
     row.className = 'item-row';
     row.innerHTML = `<div><span class="cat">${li.category}</span>${li.product}</div><div class="cost">${fmtR(li.cost)}</div>`;
     itemsBox.appendChild(row);
-  });
+  }
+
+  // Plumblink only replaces plumbing fixtures - tiles/vanity/mirror/storage
+  // still come from Tile Africa - so split into two labelled sections to
+  // make the mixed sourcing clear. Tile Africa alone stays a single list.
+  if (q.supplier === 'plumblink') {
+    const plumblinkItems = q.line_items.filter(li => li.supplier === 'Plumblink');
+    const tileAfricaItems = q.line_items.filter(li => li.supplier !== 'Plumblink');
+
+    if (plumblinkItems.length) {
+      const header = document.createElement('div');
+      header.className = 'section-header';
+      header.textContent = 'Plumbing fixtures — sourced from Plumblink';
+      itemsBox.appendChild(header);
+      plumblinkItems.forEach(addRow);
+    }
+    if (tileAfricaItems.length) {
+      const header = document.createElement('div');
+      header.className = 'section-header';
+      header.textContent = 'Tiles & fittings — sourced from Tile Africa';
+      itemsBox.appendChild(header);
+      tileAfricaItems.forEach(addRow);
+    }
+  } else {
+    q.line_items.forEach(addRow);
+  }
 
   const message =
     `Hi Christian, I used the bathroom design tool on your site.\n\n` +
     `Style: ${q.style}\nTier: ${q.tier}\nBath type: ${q.bath_type_used}\n` +
+    `Store: ${q.supplier === 'plumblink' ? 'Tile Africa + Plumblink' : 'Tile Africa'}\n` +
     `Estimated total: ${fmtR(q.confirmed_subtotal)}\n\n` +
     `I'm attaching my photo and the redesign here. Can we chat about a detailed quote?`;
   document.getElementById('whatsappBtn').href = 'https://wa.me/27727627657?text=' + encodeURIComponent(message);

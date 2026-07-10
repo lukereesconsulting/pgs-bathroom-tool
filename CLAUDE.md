@@ -111,7 +111,12 @@ anything through it.
    don't trust `bash` file contents here for verification. If you need to
    actually execute/smoke-test code, copy the files into the session's own
    `outputs` scratch folder first (that mount was reliable) and run node
-   against the copy, not the live repo mount.
+   against the copy, not the live repo mount. Refinement found 10 July
+   2026: even a file inside `outputs` can go stale/truncated on the bash
+   mount after an Edit/Write, and waiting several seconds doesn't reliably
+   fix it. The fix that does work: write the new content to a **fresh
+   filename** (e.g. `quote2.js` instead of re-editing `quote.js`) — this
+   immediately synced correctly every time it was tried.
 
 Historically (before the local clone existed) all edits went through
 GitHub.com's web editor — pencil icon → select all → paste → "Commit
@@ -127,7 +132,8 @@ package.json
 catalog/bathroom-catalog-<style>.json         — curated real Tile Africa product/price catalogs, budget/mid/premium tiers.
                                                 Six styles: modern-metro, mediterranean-hues, luxe-living,
                                                 vintage-romance, eclectic-mix, naturally-beautiful
-api/quote.js                                  — serverless fn: builds a cost estimate from style+tier+bathType, returns JSON
+catalog/plumbing-catalog-plumblink.json       — Plumblink plumbing-fixture catalog (no style split - see Plumblink section below)
+api/quote.js                                  — serverless fn: builds a cost estimate from style+tier+bathType+supplier, returns JSON
 api/redesign.js                               — serverless fn: same quote-building logic + sends photo to OpenAI images/edits, returns quote + redesigned image (base64)
 index.html                                     — homepage
 bathroom-tool.html                             — the design tool page
@@ -270,6 +276,64 @@ Read/Write/Edit). Two changes, both in `api/quote.js` and
 - Not done in this pass: an actual photo-based room measurement tool
   (click-the-corners plotter) — customer still has to type in a tape-
   measure reading, not something derived from the photo.
+
+## Plumblink store-selector build: done (10 July 2026)
+
+Christian buys plumbing fixtures from Plumblink and Vincent Hardware (see
+"Suppliers Christian actually uses" above). This pass adds a Store
+selector to the bathroom tool so a customer's quote can be regenerated
+using Plumblink pricing instead of Tile Africa's, for the categories
+that are actually plumbing fixtures.
+
+- **Why Plumblink but not Vincent Hardware got a real backend integration:**
+  researched both directly. Plumblink (plumblink.co.za) has a genuine live
+  e-commerce catalog with real, confirmed incl.-VAT prices — confirmed by
+  browsing category and search-result pages directly. Vincent Hardware
+  (vincenthardware.co.za) is a brochure/lead-gen site only — no product
+  catalog, no prices, just a "Request a quotation" contact form (checked
+  twice: WebSearch snippets and direct browsing). So Vincent Hardware is
+  a **frontend-only placeholder**: selecting it hides the quote form
+  entirely and shows a notice with a pre-filled WhatsApp link asking
+  Christian directly for Vincent Hardware pricing — no fabricated data.
+- **New catalog:** `catalog/plumbing-catalog-plumblink.json` — supplier-wide
+  (Plumblink has no style collections, unlike Tile Africa), budget/mid/premium
+  tiers for the 6 categories Plumblink actually sells: toilet, bath
+  (freestanding only — see gap below), basin mixer, bath mixer, shower
+  mixer, shower head. All prices real and live-sourced 10 July 2026.
+- **Backend mechanism** (`api/quote.js`, `api/redesign.js` — still
+  deliberately duplicated): `buildQuote(...)` gained a `supplier`
+  parameter (`"tile-africa"` default or `"plumblink"`, validated,
+  400s on anything else). `PLUMBLINK_CATEGORIES` is a fixed whitelist of
+  the 6 swappable categories. `pickWithSupplier()` tries Plumblink first
+  for whitelisted categories when requested, falling back to the style's
+  Tile Africa catalog if Plumblink doesn't have that tier/category. Every
+  line item now carries its own `supplier` field ("Tile Africa" or
+  "Plumblink") so the frontend can group the quote into two labeled
+  sections. Non-plumbing categories (tiles, vanity, mirror, towel rail,
+  storage) always stay Tile Africa — Plumblink doesn't sell them.
+- **Known gap, handled gracefully, not fabricated:** Plumblink has no
+  built-in bath in its catalog (site search was inconsistent for that
+  phrase — see Tile Africa/Plumblink sourcing gotchas). If a customer
+  picks "built-in" bath under the Plumblink store, the quote still pulls
+  the built-in bath from Tile Africa and adds a note explaining why. This
+  was caught by a bug during dev: `PLUMBLINK_CATEGORIES` initially omitted
+  `bath_freestanding`, so the Bath line silently never swapped to
+  Plumblink even when selected — fixed and re-verified across all 36
+  style×tier×supplier combinations.
+- **Frontend** (`bathroom-tool.html`): new Store pill row (Tile Africa /
+  Plumblink / Vincent Hardware) above the room-size inputs. Picking
+  Plumblink sends `supplier: currentSupplier` in the quote request and,
+  per Luke's direction, splits the results display into two
+  section-headed groups — "From Tile Africa" and "From Plumblink" — so
+  it's clear at a glance which supplier each line item came from, rather
+  than one flat list. Picking Vincent Hardware hides the room-size/
+  upload/go-button form entirely and shows the WhatsApp-handoff notice
+  described above. The WhatsApp message text sent to Christian at the end
+  of a quote now includes a `Store: ...` line.
+- Verified via node smoke tests (not the live repo bash mount, see
+  gotcha below) across all 36 style×tier×supplier combinations: correct
+  6-item Plumblink swap where expected, correct built-in-bath fallback
+  with note, correct subtotal math either way.
 
 ## Scheduled task
 
