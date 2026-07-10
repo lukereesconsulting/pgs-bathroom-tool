@@ -1,30 +1,36 @@
 {
   "style": "Mediterranean Hues",
-  "style_note": "Tile Africa's current name for the coastal-look collection - this fills the UI placeholder 'Coastal'. The 'Coastal Hue' name in earlier planning no longer exists on their site (URL 404s); Mediterranean Hues is its replacement in their live style taxonomy.",
+  "style_note": "Tile Africa's current name for the coastal-look collection - this fills the UI placeholder 'Coastal'. The 'Coastal Hue' name in earlier planning no longer exists on their site (URL 404s); Mediterranean Hues is its replacement in their live style taxonomy. Look: whites, soft naturals, Mediterranean blue accents, chrome tapware.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/mediterranean-hues/our-styles-mediterranean-hues-bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Tile Africa's Mediterranean Hues bathroom sub-listing is tapware-only: 7 mixers (Evox Kelia and Caspian), nothing else.",
-    "No vanities, toilets, baths (either type), shower heads, wall tiles, mirrors or towel rails in the range - all excluded until sourced from the wider catalogue.",
-    "Floor tile premium (Oaklore Bianco wood-look) comes from the Mediterranean Hues collection page rather than the bathroom sub-listing; budget and mid floor tiles still need sourcing.",
-    "Only two bath mixers in the range - the Caspian handshower kit is used for both mid and premium."
+    "Tile Africa's Mediterranean Hues bathroom sub-listing is tapware-only (7 Evox Kelia/Caspian mixers). Everything else here was style-matched from their wider catalogue on 2026-07-10 (coastal whites/naturals/blue accents, chrome fittings) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
+    "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
+    "Floor tile premium (Oaklore Bianco wood-look) comes from the Mediterranean Hues collection page rather than the bathroom sub-listing.",
+    "Only two bath mixers in the style's own range - the Caspian handshower kit is used for both mid and premium.",
+    "Wall tile mid and premium are the same price (Cambry gloss colour variants at R350/m2)."
   ],
   "categories": {
     "vanity": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Cancun Double Drawer Vanity, White, 600mm", "price": 2699.99, "unit": "each" },
+      "mid": { "product": "Evox Cancun Double Drawer Vanity, White, 800mm", "price": 2999.99, "unit": "each" },
+      "premium": { "product": "VitrA Mia Vanity Double Drawer Combo, White, 800mm", "price": 4999.99, "unit": "each" }
     },
     "toilet": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Amalphi Top Flush Close Couple Suite, White, incl. seat", "price": 1299.99, "unit": "each" },
+      "mid": { "product": "Evox Astro V2 Close Coupled Toilet Suite, Round, White", "price": 1499.99, "unit": "each" },
+      "premium": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Round, Glossy White", "price": 2299.99, "unit": "each" }
     },
     "bath_freestanding": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Bella Freestanding Bath, White", "price": 8500.00, "unit": "each" },
+      "mid": { "product": "Evox Iris Freestanding Bath, White, 1700x800x600mm", "price": 9999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Echo Oval Freestanding Stone Bath, Navy, 1600x720x436mm", "price": 13999.99, "unit": "each" }
+    },
+    "bath_built_in": {
+      "budget": { "product": "Nerida Acrylic Bath, White (no handles)", "price": 1699.99, "unit": "each" },
+      "mid": { "product": "Aqua Oval Fitted Bath, White", "price": 1999.99, "unit": "each" },
+      "premium": { "product": "Madeira/Hamburg Fitted Bath, White", "price": 2499.99, "unit": "each" }
     },
     "basin_mixer": {
       "budget": { "product": "Evox Kelia Basin Mixer, Chrome", "price": 699.99, "unit": "each" },
@@ -42,29 +48,29 @@
       "premium": { "product": "Evox Caspian Diverter Mixer, Chrome", "price": 1449.99, "unit": "each" }
     },
     "shower_head": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Round Shower Head Stainless Steel, Chrome, 200mm", "price": 699.99, "unit": "each" },
+      "mid": { "product": "Evox Round Shower Head Stainless Steel, Chrome, 250mm", "price": 899.99, "unit": "each" },
+      "premium": { "product": "Evox Round Shower Head Stainless Steel, Chrome, 300mm", "price": 1099.99, "unit": "each" }
     },
     "floor_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "budget": { "product": "Camps Bay Mist Glazed Ceramic Floor, 250x500mm", "price": 99.99, "unit": "per m2" },
+      "mid": { "product": "Cielo Bone Hard Body Floor, 600x600mm", "price": 179.99, "unit": "per m2" },
       "premium": { "product": "Oaklore Bianco Wood Look Ceramic Floor Tile, 195x1000mm", "price": 279.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+      "budget": { "product": "Super White Glossy Ceramic Wall Tile, 300x600mm", "price": 199.99, "unit": "per m2" },
+      "mid": { "product": "Cambry White Gloss Ceramic Wall, 75x300mm", "price": 350.00, "unit": "per m2" },
+      "premium": { "product": "Cambry Blue Gloss Ceramic Wall, 75x300mm", "price": 350.00, "unit": "per m2" }
     },
     "mirror": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Solaris Round Mirror, 600mm", "price": 599.99, "unit": "each" },
+      "mid": { "product": "Evox Antares Round Mirror, 800mm", "price": 799.99, "unit": "each" },
+      "premium": { "product": "Nuvo Class Mirror Round, 700mm", "price": 2599.99, "unit": "each" }
     },
     "towel_rail": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Theos Towel Rail 600mm", "price": 249.99, "unit": "each" },
+      "mid": { "product": "Evox Cadenza Stainless Steel Towel Rail 600mm, Chrome", "price": 349.99, "unit": "each" },
+      "premium": { "product": "Evox Cadenza Stainless Steel Double Towel Rail 600mm, Chrome", "price": 389.99, "unit": "each" }
     }
   }
 }
