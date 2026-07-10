@@ -1,14 +1,15 @@
 {
   "style": "Vintage Romance",
-  "style_note": "Tile Africa's own name for what the UI placeholder called 'Vintage' - soft classic look, slipper baths, VitrA Valarte furniture in matt ivory/grey.",
+  "style_note": "Tile Africa's own name for what the UI placeholder called 'Vintage' - soft classic look, slipper baths, VitrA Valarte furniture in matt ivory/grey, classic chrome tapware with hand showers.",
   "supplier": "Tile Africa",
   "source": "https://www.tileafrica.co.za/our-styles/vintage-romance/bathroom",
   "last_updated": "2026-07-10",
   "known_gaps": [
-    "Confirmed: no built-in/inset bath in Tile Africa's Vintage Romance bathroom range - freestanding only (Evox Danae, Aurora Slipper).",
-    "No toilets, basin/bath/shower mixers, shower heads or towel rails in the Vintage Romance bathroom range - all excluded until sourced from the wider catalogue.",
-    "Wall tile: only one confirmed option (Shiny White Ceramic Wall, used as premium) - budget and mid still need sourcing. A Mystic Interlock glass & marble mosaic exists in the range but is sold per 300x300mm sheet, so it is excluded from per-m2 quoting.",
-    "The VitrA Valarte vanities are premium European units (R14.5k-R26k) - this style has no true budget vanity; the cheapest real option is used as 'budget'."
+    "Tile Africa's Vintage Romance bathroom sub-listing has no toilets, tapware, shower heads, towel rails or built-in baths - those categories were style-matched from their wider catalogue on 2026-07-10 (round/classic shapes, chrome, hand-shower kits for the slipper baths) - same approach as Modern Metro's wall tiles. Prices are real and current; the style pairing is our curation, not Tile Africa's tagging.",
+    "Built-in baths come from the general built-in baths category - Tile Africa does not tag any built-in bath to a style collection.",
+    "Wall tile budget and mid are the same price (R189.99/m2) - both are real entry-level 300x600 matt ceramics.",
+    "The VitrA Valarte vanities are premium European units (R14.5k-R26k) - this style has no true budget vanity; the cheapest real option is used as 'budget'.",
+    "A Mystic Interlock glass & marble mosaic exists in the style's range but is sold per 300x300mm sheet, so it is excluded from per-m2 quoting."
   ],
   "categories": {
     "vanity": {
@@ -17,34 +18,39 @@
       "premium": { "product": "VitrA Valarte Double Drawer Vanity, Matt Ivory (large)", "price": 25999.99, "unit": "each" }
     },
     "toilet": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Amalphi Front Flush Close Couple Suite, White, incl. seat", "price": 1299.99, "unit": "each" },
+      "mid": { "product": "Evox Nebula V2 Close Coupled Toilet Suite, Round, White", "price": 1699.99, "unit": "each" },
+      "premium": { "product": "Evox Skye V2 Round Close Coupled Toilet, 700x360x790mm", "price": 2299.99, "unit": "each" }
     },
     "bath_freestanding": {
       "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm", "price": 8999.99, "unit": "each" },
       "mid": { "product": "Aurora Slipper Bath, White", "price": 12999.99, "unit": "each" },
       "premium": { "product": "Aurora Slipper Bath, Black", "price": 13999.99, "unit": "each" }
     },
+    "bath_built_in": {
+      "budget": { "product": "Thandi Acrylic Bath, White", "price": 1799.99, "unit": "each" },
+      "mid": { "product": "Sofia/Turin Fitted Bath, White", "price": 2499.99, "unit": "each" },
+      "premium": { "product": "Lola Rectangle Fitted Acrylic Bath, White", "price": 2999.99, "unit": "each" }
+    },
     "basin_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Victoria Basin Mixer, Chrome", "price": 999.99, "unit": "each" },
+      "mid": { "product": "Evox Serio Basin Mixer, Chrome", "price": 1099.99, "unit": "each" },
+      "premium": { "product": "Evox Cascada High Basin Mixer, Chrome", "price": 1949.99, "unit": "each" }
     },
     "bath_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Cirrus Bath Mixer, Chrome", "price": 1349.99, "unit": "each" },
+      "mid": { "product": "Evox Victoria Bath Mixer with Hand Shower Kit, Chrome", "price": 1549.99, "unit": "each" },
+      "premium": { "product": "Nuvo Round Freestanding Bath Mixer with Hand Shower, Brushed Nickel", "price": 9999.99, "unit": "each" }
     },
     "shower_mixer": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Cirrus Concealed Mixer, Chrome", "price": 949.99, "unit": "each" },
+      "mid": { "product": "Evox Serio Concealed Mixer, Chrome", "price": 1099.99, "unit": "each" },
+      "premium": { "product": "Evox Cascada Concealed Mixer, Chrome", "price": 1600.00, "unit": "each" }
     },
     "shower_head": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Evox Round Shower Head Stainless Steel, Chrome, 200mm", "price": 699.99, "unit": "each" },
+      "mid": { "product": "Evox Round Shower Head Stainless Steel, Chrome, 250mm", "price": 899.99, "unit": "each" },
+      "premium": { "product": "Nuvo Round Wall Mounted Shower Head, Chrome, 520x200mm", "price": 2099.99, "unit": "each" }
     },
     "floor_tile": {
       "budget": { "product": "Boulder Beige Ceramic Floor, 400x400mm", "price": 89.99, "unit": "per m2" },
@@ -52,8 +58,8 @@
       "premium": { "product": "Nairobi Grey Ceramic Floor, 500x500mm", "price": 99.99, "unit": "per m2" }
     },
     "wall_tile": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "budget": { "product": "Galleria Plain Matt Ceramic Wall, 300x600mm", "price": 189.99, "unit": "per m2" },
+      "mid": { "product": "Delta Dawn Matt Ceramic Wall, 300x600mm", "price": 189.99, "unit": "per m2" },
       "premium": { "product": "Shiny White Ceramic Wall, 300x600mm", "price": 199.99, "unit": "per m2" }
     },
     "mirror": {
@@ -62,9 +68,9 @@
       "premium": { "product": "VitrA Valarte LED Mirror Cabinet, Matt Ivory, 980x175x780mm", "price": 16499.99, "unit": "each" }
     },
     "towel_rail": {
-      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
-      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+      "budget": { "product": "Theos Towel Rail 600mm", "price": 249.99, "unit": "each" },
+      "mid": { "product": "Evox Albion Round Single Towel Rail 600mm, Chrome", "price": 449.99, "unit": "each" },
+      "premium": { "product": "Evox Alto Double Towel Rail", "price": 699.99, "unit": "each" }
     }
   }
 }
