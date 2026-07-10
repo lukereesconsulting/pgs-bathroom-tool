@@ -1,0 +1,69 @@
+{
+  "style": "Luxe Living",
+  "style_note": "Tile Africa's own name for what the UI placeholder called 'Classic' - opulent finishes, statement freestanding baths, matt black / brushed gold accents.",
+  "supplier": "Tile Africa",
+  "source": "https://www.tileafrica.co.za/our-styles/luxe-living/bathroom",
+  "last_updated": "2026-07-10",
+  "known_gaps": [
+    "Confirmed: no built-in/inset bath exists in Tile Africa's Luxe Living bathroom range - freestanding only.",
+    "No floor tiles, wall tiles or towel rails in the Luxe Living bathroom range at all - all three categories still need sourcing from the wider catalogue.",
+    "Only one shower head (Hansgrohe Vernis Square) and one shower concealed mixer (Hansgrohe Logis Square) in the range - each used for all three tiers."
+  ],
+  "categories": {
+    "vanity": {
+      "budget": { "product": "Nuvo Maravilla Floor Standing Vanity, Cotton, 600mm", "price": 6999.99, "unit": "each" },
+      "mid": { "product": "Nuvo Maravilla Floor Standing Vanity, Black, 1000mm", "price": 7999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Maravilla Floor Standing Vanity, Musgo, 1000mm", "price": 8499.99, "unit": "each" }
+    },
+    "toilet": {
+      "budget": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Square, Glossy White", "price": 2299.99, "unit": "each" },
+      "mid": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Square, Matt White", "price": 3499.99, "unit": "each" },
+      "premium": { "product": "Nuvo Virtuo Wall Hung Pan, Soft Square, Matt Black", "price": 3999.99, "unit": "each" }
+    },
+    "bath_freestanding": {
+      "budget": { "product": "Evox Danae Rect Freestanding Bath with Overflow, White, 1685mm", "price": 8999.99, "unit": "each" },
+      "mid": { "product": "Nuvo Allure Freestanding Acrylic Bath, White, 1700x720x800mm", "price": 12999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Flauto Freestanding Acrylic Bath, Matt White, 1695x580x795mm", "price": 18999.99, "unit": "each" }
+    },
+    "basin_mixer": {
+      "budget": { "product": "Evox Serio High Basin Mixer", "price": 1799.99, "unit": "each" },
+      "mid": { "product": "Hansgrohe Logis Square 100 Basin Mixer, Chrome", "price": 2899.99, "unit": "each" },
+      "premium": { "product": "Hansgrohe Logis Square High Basin Mixer, Chrome", "price": 3599.99, "unit": "each" }
+    },
+    "bath_mixer": {
+      "budget": { "product": "Hansgrohe Logis Square Bath Mixer, Chrome", "price": 2899.99, "unit": "each" },
+      "mid": { "product": "Nuvo Round Freestanding Bath Mixer with Hand Shower, Chrome", "price": 7999.99, "unit": "each" },
+      "premium": { "product": "Nuvo Square Freestanding Bath Mixer with Hand Shower, Brushed Gold", "price": 11999.99, "unit": "each" }
+    },
+    "shower_mixer": {
+      "budget": { "product": "Hansgrohe Logis Square Shower Concealed Mixer, Chrome", "price": 2599.99, "unit": "each" },
+      "mid": { "product": "Hansgrohe Logis Square Shower Concealed Mixer, Chrome", "price": 2599.99, "unit": "each" },
+      "premium": { "product": "Hansgrohe Logis Square Shower Concealed Mixer, Chrome", "price": 2599.99, "unit": "each" }
+    },
+    "shower_head": {
+      "budget": { "product": "Hansgrohe Vernis Square 1 Jet Shower Head, Chrome, 230mm", "price": 2199.98, "unit": "each" },
+      "mid": { "product": "Hansgrohe Vernis Square 1 Jet Shower Head, Chrome, 230mm", "price": 2199.98, "unit": "each" },
+      "premium": { "product": "Hansgrohe Vernis Square 1 Jet Shower Head, Chrome, 230mm", "price": 2199.98, "unit": "each" }
+    },
+    "floor_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+    },
+    "wall_tile": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "per m2" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "per m2" }
+    },
+    "mirror": {
+      "budget": { "product": "Nuvo Belle Mirror Shelf, Quarzo", "price": 1299.98, "unit": "each" },
+      "mid": { "product": "Nuvo Belle Mirror Shelf, Musgo", "price": 1299.98, "unit": "each" },
+      "premium": { "product": "Nuvo Belle Mirror Shelf, B Soul", "price": 1299.98, "unit": "each" }
+    },
+    "towel_rail": {
+      "budget": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "mid": { "product": "needs_confirmation", "price": null, "unit": "each" },
+      "premium": { "product": "needs_confirmation", "price": null, "unit": "each" }
+    }
+  }
+}
